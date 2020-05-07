@@ -1,0 +1,153 @@
+:root {
+    --color-primary: hsl(0, 36%, 70%);
+    --color-primary-light-1: hsl(0, 93%, 68%);
+
+    --color-dark: hsl(0, 6%, 24%);   
+}
+
+/* - Linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%)
+- Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%) */
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: inherit;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color: var(--color-dark);
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.coming-soon__wrapper {
+    padding: 2rem;
+    max-height: 670px;
+    display: flex;
+    align-items: center;
+}
+
+.coming-soon__content {
+    height: 630px;
+    flex: 0 0 60%;
+}
+
+.coming-soon__content-box {
+    background-image: url(../images/bg-pattern-desktop.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    padding: 3rem 20rem;
+}
+
+.coming-soon__image{
+    height: 630px;
+    flex: 0 0 40%;
+    background-image: url(../images/hero-desktop.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.title__top {
+    text-transform: uppercase;
+    line-height: 1.2;
+    letter-spacing: 2px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    padding-left: 3rem;
+    position: relative;
+}
+
+.title__main {
+    margin-top: 20%;
+    font-size: 7rem;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    line-height: 1.1;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.title__main span {
+    color: var(--color-primary);
+    font-weight: 200;
+}
+
+p.description {
+    font-size: 1.4rem;
+    color: var(--color-primary);
+    margin-bottom: 3rem;
+}
+
+.input__box {
+    display: flex;
+    align-items: center;
+}
+
+input:focus {
+    box-shadow: none;
+    outline: none;
+    border-color: var(--color-primary-light-1);
+}
+
+input {
+    width: 300px;
+    padding: 1.4rem 2rem 1.4rem 3rem;
+    border: 1px solid var(--color-primary);
+    border-radius: 30px;
+}
+
+input::-webkit-input-placeholder {
+    color: var(--color-primary);
+}
+
+label {
+    position: relative;
+    padding: 1.3rem;
+    width: 8rem;
+    display: flex;
+    margin-left: -4rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    background: linear-gradient( 135deg,hsl(0, 80%, 86%),hsl(0, 74%, 74%) );
+}
+
+label:hover {
+    background: hsl(0, 80%, 86%);
+    cursor: pointer;
+}
+
+.error__icon {
+    position: absolute;
+    left: -4rem;
+    display: none;
+}
+
+.error__message {
+    color: var(--color-primary-light-1);
+    padding-left: 3rem;
+    font-size: 1.2rem;
+    display: none;
+}
+
+
+
+/* - Linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%)
+- Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%) */
