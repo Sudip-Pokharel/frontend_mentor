@@ -50,6 +50,8 @@ a:visited {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    box-shadow: 0px 4px 30px 3px var(--color-gray-dark);
+    border-radius: 10px;
 }
 
 .content-box > div {
@@ -59,6 +61,8 @@ a:visited {
 .content-box__top {
     padding: 3rem 4rem;
     background: #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 .title__top-1 {
     color: var(--color-primary);
@@ -98,6 +102,7 @@ a:visited {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border-bottom-left-radius: 10px;
 }
 
 .title__left-1,
@@ -144,6 +149,8 @@ a:visited {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border-bottom-right-radius: 10px;
+
 }
 
 .right__list {
