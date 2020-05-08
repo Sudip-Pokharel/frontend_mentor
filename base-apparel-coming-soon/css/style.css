@@ -41,9 +41,16 @@ body {
     align-items: center;
 }
 
+
+
 .coming-soon__content {
     height: 630px;
     flex: 0 0 60%;
+}
+
+.wrapper__box {
+    max-width: 360px;
+    margin: 0 auto;
 }
 
 .coming-soon__content-box {
@@ -52,7 +59,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     height: 100%;
-    padding: 3rem 20rem;
+    padding: 3rem;
 }
 
 .coming-soon__image{
@@ -63,6 +70,8 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+
 
 .title__top {
     text-transform: uppercase;
@@ -111,6 +120,8 @@ input {
     padding: 1.4rem 2rem 1.4rem 3rem;
     border: 1px solid var(--color-primary);
     border-radius: 30px;
+    color: var(--color-dark);
+    font-size: 1.4rem;
 }
 
 input::-webkit-input-placeholder {
@@ -147,6 +158,24 @@ label:hover {
     display: none;
 }
 
+
+@media (max-width:768px) {
+    .coming-soon__wrapper {
+        flex-wrap: wrap;
+    }       
+    .coming-soon__content {
+        flex: 0 0 100%;
+    }
+    .logo {
+        display: none;
+    }
+    .coming-soon__image {
+        flex: 0 0 100%;
+        order: -1;
+        background-image: url(../images/hero-mobile.jpg);
+        height: 400px;
+    }
+}
 
 
 /* - Linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%)
