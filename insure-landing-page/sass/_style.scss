@@ -65,7 +65,7 @@ ul {
     &__primary {
         border-color: $color-light;
         color: $color-light !important;
-        background-color: $color-primary;
+        background-color: transparent;
         &:hover {
             color: $color-primary !important;
             background-color: $color-light;
@@ -206,12 +206,41 @@ ul {
 
     .list {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         padding-top: 5rem;
         &__item {
+            flex: 0 0 30%;
             .title__medium {
                 margin-top: 2.5rem;
                 margin-bottom: 2rem;
+            }
+            p.paragraph {
+                color: $color-dark-2;
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+.work {
+    margin: 7rem 0;
+    &__content {
+        background-color: $color-primary;
+        background-image: url('../images/bg-pattern-how-we-work-desktop.svg');
+        background-repeat: no-repeat;
+        background-position: right;
+        padding: 6rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .title__main {
+            color: $color-light;
+            padding-top: 0;
+            font-size: 5rem;
+            max-width: 44rem;
+            &::before {
+                display: none;
+                opacity: 0;
             }
         }
     }
