@@ -27,7 +27,6 @@ body {
     line-height: 1.7;
     background: $color-light;
     font-family: $default-font;
-    font-weight: 400;
     color: $color-dark-2;
 }
 
@@ -42,17 +41,84 @@ ul {
     list-style-type: none;
 }
 
+.relative {
+    position: relative !important;
+}
+
+.absolute {
+    position: absolute !important;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    border: 2px solid;
+    &__light {
+        border-color: $color-dark-1;
+        color: $color-dark-1 !important;
+        background-color: $color-light;
+        &:hover {
+            background-color: $color-dark-1;
+            color: $color-light !important;
+        }
+    }
+    &__primary {
+        border-color: $color-light;
+        color: $color-light !important;
+        background-color: $color-primary;
+        &:hover {
+            color: $color-primary !important;
+            background-color: $color-light;
+        }
+    }
+}
+
+.title{
+    font-family: $heading-font;
+    line-height: 1;
+    font-weight: 400;
+    &__main {
+        padding-top: 4rem;
+        font-size: 6rem;
+        color: $color-light;
+        margin-bottom: 2rem;
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 15rem;
+            height: 1px;
+            background-color: $color-light;
+        }
+    }
+    &__medium {
+        font-size: 3rem;
+        color: $color-dark-1;
+        text-transform: capitalize;
+    }
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
 }
 
+
+
+// *****-----------******
+// HEADER
+// *****-----------******
+
+
 .header {
+    margin-bottom: 30rem;
     .navigation {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 2rem 1rem;
+        padding: 3rem 1rem;
         ul {
             display: flex;
             li {
@@ -61,7 +127,91 @@ ul {
                 }
                 a {
                     text-transform: uppercase;   
+                    &:hover {
+                        color: $color-dark-1;
+                    }
                 }
+            }
+        }
+    }
+}
+
+
+
+// *****-----------******
+// HERO
+// *****-----------******
+
+
+.hero {
+    padding: 10rem 0;
+    background-color: $color-primary;
+    &::before,
+    &::after {
+        content: '';
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-repeat: no-repeat;
+        background-size: contain;
+        z-index: 2;
+    }
+    &::before {
+        background-image: url('../images/bg-pattern-intro-right-desktop.svg');
+        background-position: right top;
+    }
+    &::after {
+        top: 60%;
+        background-image: url('../images/bg-pattern-intro-left-desktop.svg');
+        background-position: left bottom;
+    }
+    
+    &__content {
+        max-width: 58rem;
+        position: relative;
+        z-index: 3;
+        .title__main {
+            max-width: 50rem;
+        }
+        p.paragraph {
+            color: rgba($color-light,0.9);
+            font-size: 1.6rem;
+            margin-bottom: 3rem;
+            line-height: 30px;
+        }
+    }
+
+    &__image {
+        top: 10rem;
+        left: 50%;
+    }
+}
+
+
+// *****-----------******
+// WE ARE DIFFERENT SECTION
+// *****-----------******
+
+.different {
+    padding: 2rem 0;
+
+    .title__main {
+        color: $color-dark-1;
+        &::before {
+            background-color: $color-dark-2;
+        }
+    }
+
+    .list {
+        display: flex;
+        justify-content: center;
+        padding-top: 5rem;
+        &__item {
+            .title__medium {
+                margin-top: 2.5rem;
+                margin-bottom: 2rem;
             }
         }
     }
