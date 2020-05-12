@@ -35,11 +35,39 @@
           <li>
             <a href="#" class="btn btn__light">View plans</a>
           </li>
+          <li class="show-on-mobile menu__open--trigger">
+            <a href="#" id="menu__open">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+                <g fill="none" fill-rule="evenodd">
+                  <path fill="#FFF" stroke="#2C2830" stroke-width="1.5" d="M.75.75h30.5v30.5H.75z" />
+                  <g fill="#2C2830">
+                    <path d="M8 10h16v1.5H8zM8 15h16v1.5H8zM8 20h16v1.5H8z" />
+                  </g>
+                </g>
+              </svg>
+            </a>
+          </li>
+          <li class="show-on-mobile menu__close--trigger">
+            <a href="" id="menu__close">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+                <g fill="none" fill-rule="evenodd">
+                  <path fill="#FFF" stroke="#2C2830" stroke-width="1.5" d="M.75.75h30.5v30.5H.75z" />
+                  <g fill="#2C2830">
+                    <path d="M10.873 9.563l11.314 11.314-1.06 1.06L9.813 10.623z" />
+                    <path d="M9.813 20.877L21.127 9.563l1.06 1.06-11.314 11.314z" />
+                  </g>
+                </g>
+              </svg>
+            </a>
+          </li>
         </ul>
       </nav>
     </div>
     <div class="hero relative">
       <div class="container">
+        <div class="hero__image absolute">
+          <img src="./images/image-intro-desktop.jpg" alt="Hero Image">
+        </div>
         <div class="hero__content">
           <h1 class="title title__main">
             Humanizing your insurance.
@@ -50,11 +78,25 @@
           </p>
           <a href="#" class="btn btn__primary">Views plans</a>
         </div>
-        <div class="hero__image absolute">
-          <img src="./images/image-intro-desktop.jpg" alt="Hero Image">
-        </div>
+
       </div>
     </div>
+    <nav class="menu__open-content">
+      <ul>
+        <li>
+          <a href="#">How we work</a>
+        </li>
+        <li>
+          <a href="#">blog</a>
+        </li>
+        <li>
+          <a href="#">Account</a>
+        </li>
+        <li>
+          <a href="#" class="btn btn__primary">View plans</a>
+        </li>
+      </ul>
+    </nav>
   </header>
 
   <main>
@@ -228,6 +270,8 @@
     </div>
   </footer>
 
+
+  <script src="./js/main.js"></script>
 </body>
 
 </html>

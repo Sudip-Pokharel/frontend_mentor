@@ -19,6 +19,12 @@ $heading-font: 'DM Serif Display', serif;
 html {
     font-size: 62.5%;
     box-sizing: inherit;
+    @media (max-width:480px) {
+        font-size: 54%;
+    }
+    @media (max-width:300px) {
+        font-size: 40%;
+    }
 }
 
 body {
@@ -47,6 +53,10 @@ ul {
 
 .absolute {
     position: absolute !important;
+}
+
+.overflow__hidden {
+    overflow: hidden;
 }
 
 .btn {
@@ -91,6 +101,10 @@ ul {
             width: 15rem;
             height: 1px;
             background-color: $color-light;
+            @media (max-width:768px) {
+                opacity: 0;
+                visibility: hidden;
+            }
         }
     }
     &__medium {
@@ -104,6 +118,9 @@ ul {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
+    @media (max-width:768px) {
+        // padding: 0 0;
+    }
 }
 
 
@@ -115,16 +132,62 @@ ul {
 
 .header {
     margin-bottom: 30rem;
+    position: relative;
+    @media (max-width:768px) {
+        margin-bottom: 24rem;
+        &.menu-open {
+            .navigation {
+                ul {
+                    li {
+                        &.show-on-mobile {
+                            &.menu__open--trigger {
+                                display: none;
+                                opacity: 0;
+                            }
+                            &.menu__close--trigger {
+                                display: list-item;
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+            .menu__open-content {
+                display: block;
+                opacity: 1;
+            }
+        }
+    }
     .navigation {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 3rem 1rem;
+        min-height: 90px;
         ul {
             display: flex;
             li {
+                &.show-on-mobile {
+                    display: none;
+                    opacity: 0;
+                    &.menu__close--trigger {
+                        display: none;
+                        opacity: 0;
+                    }
+                }
+                @media (max-width:768px) {
+                    display: none;
+                    opacity: 0;
+                    &.show-on-mobile {
+                        display: list-item;
+                        opacity: 1;
+                    }
+                }
                 &:not(:last-child) {
                     padding-right: 2rem;
+                    &.show-on-mobile {
+                        padding-right: 0;
+                    }
                 }
                 a {
                     text-transform: uppercase;   
@@ -135,6 +198,44 @@ ul {
             }
         }
     }
+
+    .menu__open-content {
+        display: none;
+        opacity: 0;
+        position: absolute;
+        top: 90px;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: $color-primary;
+        z-index: 9999999999999;
+        background-image: url(../images/bg-pattern-mobile-nav.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: bottom;
+        ul {
+            align-items: center;
+            padding: 3rem 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            li {
+                &:not(:last-child) {
+                    padding-bottom: 2rem;
+                }
+                &:last-child {
+                    margin-top: 1rem;
+                }
+                a {
+                    color: $color-light;
+                    font-size: 2rem;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+
+
 }
 
 
@@ -146,6 +247,12 @@ ul {
 
 .hero {
     padding: 10rem 0;
+    @media (max-width:768px) {
+        padding: 0;
+        .container {
+            padding: 0 0;
+        }
+    }
     background-color: $color-primary;
     &::before,
     &::after {
@@ -162,17 +269,54 @@ ul {
     &::before {
         background-image: url('../images/bg-pattern-intro-right-desktop.svg');
         background-position: right top;
+        @media (max-width:768px) {
+            background-image: none;
+        }
     }
     &::after {
         top: 60%;
         background-image: url('../images/bg-pattern-intro-left-desktop.svg');
         background-position: left bottom;
+        @media (max-width:768px) {
+            background-image: none;
+        }
     }
     
     &__content {
         max-width: 58rem;
         position: relative;
         z-index: 3;
+        @media (max-width:768px) {
+            padding: 2rem 2rem 7rem;
+            max-width: 100%;
+            text-align: center;
+            .title__main {
+                max-width: 100% !important;
+            }
+            &::before,
+            &::after {
+                content: '';
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-repeat: no-repeat;
+                background-size: auto;
+                z-index: 2;
+            }
+            &::before {
+                background-image: url('../images/bg-pattern-intro-right-mobile.svg');
+                background-position: right bottom;
+                top: 50%;
+            }
+            &::after {
+                top: -8px;
+                background-position: left top;
+                background-image: url('../images/bg-pattern-intro-left-mobile.svg');
+              
+            }
+        }
         .title__main {
             max-width: 50rem;
         }
@@ -187,6 +331,15 @@ ul {
     &__image {
         top: 10rem;
         left: 50%;
+        @media (max-width:768px) {
+            position: relative !important;
+            top: 0;
+            left: 0;
+            // width: 100%;
+            img {
+                width: 100%;
+            }
+        }
     }
 }
 
@@ -197,7 +350,6 @@ ul {
 
 .different {
     padding: 2rem 0;
-
     .title__main {
         color: $color-dark-1;
         &::before {
@@ -221,6 +373,11 @@ ul {
             justify-content: center;
             align-items: center;
             text-align: center;
+            &__item {
+                &:not(:last-child) {
+                    margin-bottom: 2rem;
+                }
+            }
         }
         &__item {
             flex: 0 0 30%;
@@ -246,7 +403,7 @@ ul {
         background-color: $color-primary;
         background-image: url('../images/bg-pattern-how-we-work-desktop.svg');
         background-repeat: no-repeat;
-        background-position: right;
+        background-position: right top;
         padding: 6rem;
         display: flex;
         justify-content: space-between;
