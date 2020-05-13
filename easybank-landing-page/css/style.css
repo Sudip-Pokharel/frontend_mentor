@@ -1,0 +1,121 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 1.8rem;
+  line-height: 1.7;
+  font-family: "Public Sans", sans-serif;
+  font-weight: 300;
+  color: #9698a6;
+}
+
+a:visited,
+a:link {
+  text-decoration: none;
+}
+
+.btn__primary {
+  padding: 1.4rem 3rem;
+  color: #fafafa;
+  border-radius: 50px;
+  background: linear-gradient(to right, #31d35c, #2bb7da);
+}
+.btn__primary:hover {
+  background: linear-gradient(to right, rgba(49, 211, 92, 0.7), rgba(43, 183, 218, 0.7));
+}
+
+.title {
+  color: #2d314d;
+  line-height: 1.1;
+}
+.title__main {
+  font-size: 4rem;
+  font-weight: 400;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.header .navigation {
+  padding: 0 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  z-index: 999;
+}
+.header .navigation .logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .navigation .nav {
+  display: flex;
+}
+.header .navigation .nav li {
+  padding: 2rem 0;
+}
+.header .navigation .nav li:not(:last-child) {
+  margin-right: 2rem;
+}
+.header .navigation .nav li a {
+  color: inherit;
+  padding: 2rem 0;
+  border-bottom: 3px solid transparent;
+}
+.header .navigation .nav li a:hover {
+  color: #2d314d;
+  border-bottom: 3px solid #31d35c;
+}
+.header .navigation .btn {
+  padding: 0.9rem 3rem;
+}
+.header .hero {
+  min-height: 50rem;
+  background-color: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.header .hero .container {
+  flex: 0 0 100%;
+}
+.header .hero .content {
+  max-width: 42rem;
+}
+.header .hero .content .title__main {
+  margin-bottom: 2rem;
+}
+.header .hero .content p.paragraph {
+  margin-bottom: 4rem;
+}
+.header .hero__image {
+  top: -40%;
+  left: 50%;
+}
+
+/*# sourceMappingURL=style.css.map */

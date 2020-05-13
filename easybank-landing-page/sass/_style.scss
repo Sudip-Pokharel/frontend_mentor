@@ -1,0 +1,139 @@
+
+$color-primary-blue: hsl(233, 26%, 24%);
+$color-primary-green: hsl(136, 65%, 51%);
+$color-primary-cyan: hsl(192, 70%, 51%);
+
+$color-gray-blue: hsl(233, 8%, 62%);
+$color-light-blue: hsl(220, 16%, 96%);
+$color-gray-light: hsl(0, 0%, 98%);
+$color-white: hsl(0, 0%, 100%);
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 1.8rem;
+    line-height: 1.7;
+    font-family: 'Public Sans', sans-serif;
+    font-weight: 300;
+    color: $color-gray-blue;
+}
+
+a:visited,
+a:link {
+    text-decoration: none;
+}
+
+.btn {
+    &__primary {
+        padding: 1.4rem 3rem;
+        color: $color-gray-light;
+        border-radius: 50px;
+        background:linear-gradient(to right,$color-primary-green, $color-primary-cyan);
+        &:hover {
+            background:linear-gradient(to right,rgba($color-primary-green,0.7), rgba($color-primary-cyan,0.7));
+        }
+    }
+}
+
+.title {
+    color: $color-primary-blue;
+    line-height: 1.1;
+    &__main {
+        font-size: 4rem;
+        font-weight: 400;
+    }
+}
+
+ul {
+    list-style-type: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.header {
+    .navigation {
+        padding: 0 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $color-white;
+        z-index: 999;
+        .logo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav {
+            display: flex;
+            li {
+                padding: 2rem 0;
+                &:not(:last-child) {
+                    margin-right: 2rem;
+                }
+                a {
+                    color: inherit;
+                    padding: 2rem 0;
+                    border-bottom: 3px solid transparent;
+                    
+                    &:hover {
+                        color: $color-primary-blue;
+                        border-bottom: 3px solid $color-primary-green;
+                    }
+                }
+            }  
+        }
+        .btn {
+            padding: .9rem 3rem;
+        }
+    }
+    .hero {
+        min-height: 50rem;
+        background-color: hsl(0, 0%, 98%);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        .container {
+            flex: 0 0 100%;
+        }
+        // background-image: url('../images/bg-intro-desktop.svg');
+        // background-repeat: no-repeat;
+        // background-position: right top;
+        // background-size: auto;
+        .content {
+            max-width: 42rem;
+            .title__main {
+                margin-bottom: 2rem;
+            }
+            p.paragraph {
+                margin-bottom: 4rem;
+            }
+        }
+
+        &__image {
+            top: -40%;
+            left: 50%;
+        }
+    }
+}
