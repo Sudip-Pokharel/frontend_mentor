@@ -49,9 +49,15 @@ a:link {
 .title {
     color: $color-primary-blue;
     line-height: 1.1;
+    font-weight: 400;
     &__main {
         font-size: 4rem;
-        font-weight: 400;
+    }
+    &__medium {
+        font-size: 3.2rem;
+    }
+    &__small {
+        font-size: 2.2rem;
     }
 }
 
@@ -135,5 +141,52 @@ ul {
             top: -40%;
             left: 50%;
         }
+    }
+}
+
+.why {
+    background-color:$color-light-blue;
+    padding: 8rem 0;
+    .title__medium {
+        margin-bottom: 3rem;
+    }
+    .paragraph__main {
+        max-width: 64rem;
+    }
+
+    &__list {
+        margin-top: 7rem;
+        display: flex;
+    }
+    &__item {
+        &:not(:last-child) {
+            margin-right: 2rem;
+        }
+        .title__small {
+            margin: 4rem 0 3rem;
+        }
+
+        p.paragraph {
+            font-size: 1.6rem;
+        }
+    }
+}
+
+.article {
+    padding: 8rem 0;
+    .title__medium {
+        margin-bottom: 4rem;
+    }
+
+    &__list {
+        display: flex;
+    }
+
+    &__item {
+        width: 25rem;
+    }
+
+    &__image {
+        width: 100%;
     }
 }

@@ -37,10 +37,16 @@ a:link {
 .title {
   color: #2d314d;
   line-height: 1.1;
+  font-weight: 400;
 }
 .title__main {
   font-size: 4rem;
-  font-weight: 400;
+}
+.title__medium {
+  font-size: 3.2rem;
+}
+.title__small {
+  font-size: 2.2rem;
 }
 
 ul {
@@ -116,6 +122,46 @@ ul {
 .header .hero__image {
   top: -40%;
   left: 50%;
+}
+
+.why {
+  background-color: #f3f4f6;
+  padding: 8rem 0;
+}
+.why .title__medium {
+  margin-bottom: 3rem;
+}
+.why .paragraph__main {
+  max-width: 64rem;
+}
+.why__list {
+  margin-top: 7rem;
+  display: flex;
+}
+.why__item:not(:last-child) {
+  margin-right: 2rem;
+}
+.why__item .title__small {
+  margin: 4rem 0 3rem;
+}
+.why__item p.paragraph {
+  font-size: 1.6rem;
+}
+
+.article {
+  padding: 8rem 0;
+}
+.article .title__medium {
+  margin-bottom: 4rem;
+}
+.article__list {
+  display: flex;
+}
+.article__item {
+  width: 25rem;
+}
+.article__image {
+  width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */
