@@ -66,6 +66,14 @@ ul {
   position: absolute;
 }
 
+.header {
+  overflow: hidden;
+}
+.header__top {
+  background-color: white;
+  position: relative;
+  z-index: 9;
+}
 .header .navigation {
   padding: 0 0.5rem;
   display: flex;
@@ -100,12 +108,18 @@ ul {
 .header .navigation .btn {
   padding: 0.9rem 3rem;
 }
+.header .main__background {
+  background-image: url("../images/image-mockups.png");
+}
 .header .hero {
   min-height: 50rem;
   background-color: #fafafa;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  background-image: url("../images/bg-intro-desktop.svg");
+  background-repeat: no-repeat;
+  background-position: 560px, right;
 }
 .header .hero .container {
   flex: 0 0 100%;
@@ -120,13 +134,13 @@ ul {
   margin-bottom: 4rem;
 }
 .header .hero__image {
-  top: -40%;
-  left: 50%;
+  top: -15%;
+  left: 53%;
 }
 
 .why {
   background-color: #f3f4f6;
-  padding: 8rem 0;
+  padding: 13rem 0;
 }
 .why .title__medium {
   margin-bottom: 3rem;
