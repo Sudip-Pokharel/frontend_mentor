@@ -59,6 +59,7 @@ a:link {
     &__small {
         font-size: 2.2rem;
     }
+   
 }
 
 ul {
@@ -183,19 +184,123 @@ ul {
 
 .article {
     padding: 8rem 0;
+    background-color: $color-gray-light;
     .title__medium {
         margin-bottom: 4rem;
     }
 
     &__list {
         display: flex;
+        justify-content: space-between;
     }
 
     &__item {
-        width: 25rem;
+        flex: 0 0 24%;
+        background-color: $color-white;
+        img {
+            width: 100%;
+            height: 20rem;
+            border-top-right-radius: 0.5rem;
+            border-top-left-radius: 0.5rem;
+        }
+        a {
+            &:hover {
+                .article__title {
+                    color: $color-primary-green;
+                }
+            }
+        }
+    }
+
+    &__author {
+        color: $color-gray-blue;
+        font-size: 1.2rem;
+    }
+
+    &__content-box {
+        padding: 2rem;
+    }
+
+    &__title {
+        color: $color-primary-blue;
+        line-height: 1.1;
+        font-weight: 400;
+        font-size: 2rem;
+        padding: .8rem 0;
+        transition: 0.2s ease-in-out;
+    }
+
+    &__description {
+        color: $color-gray-blue;
+        font-size: 1.6rem;
+        font-weight: 400;
     }
 
     &__image {
         width: 100%;
+    }
+}
+
+.footer {
+    background-color: $color-primary-blue;
+    padding: 8rem 0;
+
+    &__box {
+        display: flex;
+        justify-content: space-between;
+        & > div {
+            flex: 0 0 50%;
+        }
+    }
+
+    &__left {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__social {
+        flex: 0 0 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    &__media-links {
+        display: flex;
+        li{
+            a {
+                transition: 0.2s ease-in-out;
+                &:hover {
+                    svg path{
+                        fill: $color-primary-green;
+                    }
+                }
+            }
+            &:not(:last-child){
+                margin-right: 1rem;
+            }
+        }
+    }
+
+    &__quick-links {
+        display: flex;
+        flex-wrap: wrap;
+        & > li {
+            flex: 0 0 50%;
+            padding-bottom: 1.5rem;
+            a {
+                color: $color-light-blue;
+                &:hover {
+                    color: $color-primary-green;
+                }
+            }
+        }
+    }
+
+    &__right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
     }
 }
