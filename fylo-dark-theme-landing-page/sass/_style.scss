@@ -115,6 +115,9 @@ ul {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
+    @media (max-width:768px) {
+        padding: 0 2rem;
+    }
 }
 
 .header {
@@ -127,10 +130,17 @@ ul {
         padding: 2rem 0;
         ul {
             display: flex;
+            @media (max-width:424px){
+                display: none;
+                opacity: 0;
+            }
         }
         &__item {
             &:not(:last-child) {
                 padding-right: 3rem;
+                @media (max-width:768px) {
+                    padding-right: 1.8rem;
+                }
             }
         }
         &__link {
@@ -152,17 +162,27 @@ ul {
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: contain;
+    @media (max-width:768px) {
+        background-image: url('../images/bg-curvy-mobile.svg');
+        padding-bottom: 10rem;
+    }
     .container {
         display: flex;
         justify-content: center;
         flex-direction: column;
         align-items: center;
         text-align: center;
+        img {
+            width: 100%;
+        }
     }
   
     &__title {
         max-width: 70rem;
         margin: 4rem 0 3.5rem;
+        @media (max-width:768px) {
+            font-size: 3.2rem;
+        }
     }
     &__para {
         font-size: 1.8rem;
@@ -180,6 +200,9 @@ ul {
         align-items: center;
         text-align: center;
         flex-wrap: wrap;
+        @media (max-width:768px) {
+            flex-direction: column;
+        }
     }
     &__item {
         flex: 0 0 48%;
@@ -206,13 +229,27 @@ ul {
     &__container {
         display: flex;
         align-items: center;
+        @media (max-width:768px) {
+            flex-wrap: wrap;
+        }
+        img {
+            width: 100%;
+        }
     }
     &__content {
         padding-left: 5rem;
-
+        @media (max-width:768px) {
+            margin-top: 3rem;
+           padding-left: 0;
+        }
+       
         .title {
             max-width: 40rem;
             margin-bottom: 1.5rem;
+            @media (max-width:768px) {
+                font-size: 2.2rem;
+                max-width: 100%;
+            }
         }
         .paragraph {
             font-size: 1.6rem;
@@ -231,6 +268,9 @@ ul {
         display: flex;
         justify-content: space-between;
         position: relative;
+        @media (max-width:768px) {
+            flex-direction: column;
+        }
         &::before {
             content: '';
             position: absolute;
@@ -240,12 +280,21 @@ ul {
             z-index: -1;
             top: -3.5rem;
             left: -.9rem;
+            @media (max-width:768px) {
+                left: 0;
+            }
         }
     }
     &__item {
         flex: 0 0 31%;
         background-color: $color-dark-blue-4;
         padding: 4rem 2.2rem 2.2rem;
+
+        @media (max-width:768px) {
+            &:not(:last-child) {
+                margin-bottom: 3rem;
+            }
+        }
 
         .paragraph {
             font-size: 1.5rem;
@@ -305,14 +354,23 @@ ul {
         display: flex;
         justify-content: space-between;
         margin-top: 3rem;
+        @media (max-width:768px) {
+            flex-direction: column;
+            max-width: 40rem;
+            margin: 3rem auto 0;
+        }
         input {
             border-radius: 50px;
             flex: 0 0 48rem;
-            padding: 1.2rem 2.2rem;
+            padding: 1.4rem 2.2rem;
             border: none;
             font-family: inherit;
             font-size: inherit;
             color: $color-dark-blue-1;
+            @media (max-width:768px) {
+                flex-basis: auto;
+                margin-bottom: 2rem;
+            }
             &:focus {
                 outline: none;
             }
@@ -335,8 +393,14 @@ ul {
         justify-content: space-between;
         align-items: baseline;
         margin-top: 3rem;
+        @media (max-width:768px) {
+            flex-direction: column;
+        }
         & > li {
             flex: 0 0 20%;
+            @media (max-width:768px) {
+                padding-bottom: 1.2rem;     
+            }
         }
         .location {
             display: flex;
@@ -349,11 +413,17 @@ ul {
                 padding-left: 2.2rem;
                 color: $color-light;
                 font-size: 1.6rem;
+                @media (max-width:768px) {
+                    max-width: 50rem;
+                }
             }
         }
         .contact {
             flex: 0 0 29%;
             padding-left: 5%;
+            @media (max-width:768px) {
+                padding-left: 0;
+            }
             ul {
                 li {
                     display: flex;
@@ -374,12 +444,23 @@ ul {
             }
         }
         .links {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            @media (max-width:768px) {
+                flex-direction: column;
+                margin-top: 5rem;
+            }
             ul {
                 display: flex;
-                justify-content: space-between;
-                flex-wrap: wrap;
+                flex-direction: column;
+                @media (max-width:768px) {
+                    &:first-child {
+                        margin-bottom: 5rem;
+                    }
+                }
                 & > li {
-                    flex: 0 0 50%;
+                    flex: 0 0 100%;
                     padding-bottom: .8rem;
                     a {
                         color: $color-light;
@@ -394,6 +475,9 @@ ul {
             }
         }
         .media {
+            @media (max-width:768px) {
+                align-self: center;
+            }
             ul {
                 display: flex;
                 justify-content: flex-end;
