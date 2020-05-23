@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.7;
+  background-color: #181f2a;
+  position: relative;
+}
+
+a:visited,
+a:link {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.title {
+  font-family: "Raleway", sans-serif;
+  color: white;
+}
+.title__big {
+  font-size: 3.4rem;
+}
+.title__small {
+  font-size: 2rem;
+}
+
+.btn {
+  font-family: "Raleway", sans-serif;
+  color: #dedede;
+  text-transform: capitalize;
+}
+.btn__cta {
+  font-size: 1.6rem;
+  padding: 1.2rem 8rem;
+  border-radius: 100px;
+  background: linear-gradient(to right, #65e2d9, #339ecc);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.header {
+  background-color: #1c2431;
+  padding-top: 2rem;
+}
+.header .nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+}
+.header .nav ul {
+  display: flex;
+}
+.header .nav__item:not(:last-child) {
+  padding-right: 3rem;
+}
+.header .nav__link {
+  color: #dedede;
+  font-family: "Raleway", sans-serif;
+  transition: 0.2s ease-in-out;
+}
+.header .nav__link:hover {
+  color: white;
+}
+
+.intro {
+  background-color: #1c2431;
+  padding: 4rem 0 16rem;
+  background-image: url("../images/bg-curvy-desktop.svg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.intro .container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.intro__title {
+  max-width: 70rem;
+  margin: 4rem 0;
+}
+.intro__para {
+  font-size: 1.8rem;
+  color: #dedede;
+  max-width: 550px;
+  margin-bottom: 3rem;
+}
+
+.feature__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+.feature__item {
+  flex: 0 0 48%;
+  margin: 1%;
+  padding: 4rem 2.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.feature__item .title {
+  margin: 1.4rem 0 1rem;
+}
+.feature__item .paragraph {
+  color: #dedede;
+  font-size: 1.5rem;
+  max-width: 400px;
+}
+
+.work {
+  display: flex;
+  align-items: center;
+}
+.work__content {
+  padding-left: 6rem;
+}
+.work__content .title {
+  max-width: 40rem;
+}
+
+/*# sourceMappingURL=style.css.map */

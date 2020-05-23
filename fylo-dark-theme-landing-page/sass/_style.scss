@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');//Headings, Call-to-actions, Header Navigation
+
+$color-dark-blue-1: hsl(217, 28%, 15%); //intro and email sign up background
+$color-dark-blue-2: hsl(218, 28%, 13%); //main background
+$color-dark-blue-3: hsl(216, 53%, 9%); //footer background
+$color-dark-blue-4: hsl(219, 30%, 18%); //testimonials background
+
+$color-cyan: hsl(176, 68%, 64%); //inside call-to-action gradient
+$color-blue: hsl(198, 60%, 50%); //inside call-to-action gradient
+
+$color-white: hsl(0, 0%, 100%);
+$color-light: #dedede;
+
+$font-body: 'Open Sans', sans-serif;
+$font-heading: 'Raleway', sans-serif;
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: $color-white;
+    font-family: $font-body;
+    line-height: 1.7;
+    background-color: $color-dark-blue-2;
+    position: relative;
+}
+
+a:visited,
+a:link {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.title {
+    font-family: $font-heading;
+    color: $color-white;
+    &__big {
+        font-size: 3.4rem;
+    }
+    &__small {
+        font-size: 2rem;
+    }
+}
+
+.btn {
+    font-family: $font-heading;
+    color: $color-light;
+    text-transform: capitalize;
+    &__cta {
+        font-size: 1.6rem;
+        padding: 1.2rem 8rem;
+        border-radius: 100px;
+        background: linear-gradient(to right, $color-cyan,$color-blue);
+
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.header {
+    background-color: $color-dark-blue-1;
+    padding-top: 2rem;
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 0;
+        ul {
+            display: flex;
+        }
+        &__item {
+            &:not(:last-child) {
+                padding-right: 3rem;
+            }
+        }
+        &__link {
+            color: $color-light;
+            font-family: $font-heading;
+            transition: 0.2s ease-in-out;
+            &:hover {
+                color: $color-white;
+            }
+        }
+    }
+}
+
+.intro {
+    background-color: $color-dark-blue-1;
+    padding: 4rem 0 16rem;
+    background-image: url('../images/bg-curvy-desktop.svg');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+    .container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+  
+    &__title {
+        max-width: 70rem;
+        margin: 4rem 0;
+    }
+    &__para {
+        font-size: 1.8rem;
+        color: $color-light;
+        max-width: 550px;
+        margin-bottom: 3rem;
+    }
+}
+
+.feature {
+    &__list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-wrap: wrap;
+    }
+    &__item {
+        flex: 0 0 48%;
+        margin: 1%;
+        padding: 4rem 2.8rem; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .title {
+            margin: 1.4rem 0 1rem;
+        }
+        .paragraph {
+            color: $color-light;
+            font-size: 1.5rem;
+            max-width: 400px;
+        }
+    }
+
+}
+
+.work {
+    display: flex;
+    align-items: center;
+    &__content {
+        padding-left: 6rem;
+
+        .title {
+            max-width: 40rem;
+        }
+    }
+}
