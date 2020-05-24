@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 1.5rem;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.7;
+  position: relative;
+  box-sizing: border-box;
+  color: #494c5f;
+  background-color: #f6f6fe;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.title__main {
+  font-size: 2.8rem;
+  color: #6d708d;
+}
+
+.pricing {
+  padding: 4rem 0;
+}
+.pricing__header {
+  text-align: center;
+}
+.pricing__header .title.title__main {
+  margin-bottom: 3rem;
+}
+.pricing__header input {
+  display: none;
+}
+.pricing__header input:checked + label span::before {
+  left: 50%;
+}
+.pricing__header label {
+  color: #b3b5c6;
+  font-size: 1.3rem;
+  font-family: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pricing__header label:hover {
+  cursor: pointer;
+}
+.pricing__header label:hover span {
+  background: linear-gradient(to right, rgba(163, 168, 240, 0.8), rgba(105, 111, 221, 0.8));
+}
+.pricing__header label span {
+  width: 4.2rem;
+  height: 2.2rem;
+  border-radius: 50px;
+  background: linear-gradient(to right, #a3a8f0, #696fdd);
+  margin: 0 2rem;
+  position: relative;
+  transition: 0.2s ease-in-out;
+}
+.pricing__header label span::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 100%;
+  background-color: #f6f6fe;
+  transition: 0.2s ease-in-out;
+}
+
+/*# sourceMappingURL=style.css.map */
