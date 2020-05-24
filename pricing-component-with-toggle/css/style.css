@@ -20,6 +20,7 @@ body {
   box-sizing: border-box;
   color: #494c5f;
   background-color: #f6f6fe;
+  font-weight: 700;
 }
 
 .container {
@@ -28,13 +29,75 @@ body {
   padding: 0 2rem;
 }
 
+ul {
+  list-style-type: none;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+.btn {
+  text-transform: uppercase;
+  padding: 0.8rem 1.8rem;
+  border-radius: 0.4rem;
+  font-size: 1.1rem;
+  letter-spacing: 1.2px;
+  border: 1px solid;
+}
+.btn__primary {
+  background: linear-gradient(to right, #a3a8f0, #696fdd);
+  color: #f6f6fe !important;
+  border-color: currentColor;
+  transition: 0.2s ease-in-out;
+}
+.btn__primary:hover {
+  color: #696fdd !important;
+  background: transparent;
+}
+.btn__light {
+  background: #f6f6fe;
+  color: #696fdd !important;
+  border: 1px solid #ffffff;
+}
+.btn__light:hover {
+  background: transparent;
+  color: #f6f6fe !important;
+}
+
+.title {
+  color: #6d708d;
+}
 .title__main {
   font-size: 2.8rem;
-  color: #6d708d;
+}
+.title__small {
+  font-size: 1.5rem;
 }
 
 .pricing {
   padding: 4rem 0;
+  min-height: 100vh;
+  background-image: url("../images/bg-top.svg");
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: auto;
+  position: relative;
+}
+.pricing::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/bg-bottom.svg");
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: auto;
+  z-index: -1;
 }
 .pricing__header {
   text-align: center;
@@ -55,6 +118,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: fit-content;
+  margin: 0 auto;
 }
 .pricing__header label:hover {
   cursor: pointer;
@@ -82,6 +147,105 @@ body {
   border-radius: 100%;
   background-color: #f6f6fe;
   transition: 0.2s ease-in-out;
+}
+.pricing__plan-list {
+  margin: 7rem auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s ease-in-out;
+}
+@media (max-width: 767px) {
+  .pricing__plan-list {
+    flex-direction: column;
+  }
+}
+.pricing__plan-list__item {
+  flex: 0 1 30rem;
+  text-align: center;
+  padding: 2rem 2.2rem;
+  background-color: #ffffff;
+  border-radius: 0.7rem;
+  box-shadow: 0px 6px 11px 1px rgba(109, 112, 141, 0.4);
+}
+@media (min-width: 768px) {
+  .pricing__plan-list__item:first-of-type {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .pricing__plan-list__item:last-of-type {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+@media (max-width: 767px) {
+  .pricing__plan-list__item {
+    width: 40rem;
+  }
+  .pricing__plan-list__item:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}
+@media (max-width: 424px) {
+  .pricing__plan-list__item {
+    width: 30rem;
+  }
+}
+.pricing__plan-list__item .title {
+  margin-bottom: 0.3rem;
+}
+.pricing__plan-list__item .price {
+  font-size: 4.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pricing__plan-list__item .price .dollar {
+  font-size: 2.4rem;
+  margin-right: 0.5rem;
+}
+.pricing__plan-list__item ul {
+  margin: 1rem 0 2rem;
+}
+.pricing__plan-list__item ul li {
+  padding: 1.2rem 0;
+  font-size: 1.2rem;
+  color: #6d708d;
+}
+.pricing__plan-list__item ul li:first-child {
+  border-top: 1px solid #b3b5c6;
+}
+.pricing__plan-list__item ul li:not(:last-child) {
+  border-bottom: 1px solid #b3b5c6;
+}
+.pricing__plan-list__item ul li:last-child {
+  border-bottom: 1px solid rgba(179, 181, 198, 0.7);
+}
+.pricing__plan-list__item .btn {
+  display: block;
+}
+.pricing__plan-list__item-professional {
+  background: linear-gradient(to right, #a3a8f0, #696fdd);
+  padding-top: 4.2rem;
+  padding-bottom: 4.2rem;
+}
+.pricing__plan-list__item-professional .title {
+  color: #f6f6fe;
+}
+.pricing__plan-list__item-professional .price {
+  color: #f6f6fe;
+}
+.pricing__plan-list__item-professional ul li {
+  color: #f6f6fe;
+}
+.pricing__plan-list__monthly {
+  display: none;
+}
+.pricing#pricing.monthly__view .pricing__plan-list__annually {
+  display: none;
+}
+.pricing#pricing.monthly__view .pricing__plan-list__monthly {
+  display: flex;
 }
 
 /*# sourceMappingURL=style.css.map */

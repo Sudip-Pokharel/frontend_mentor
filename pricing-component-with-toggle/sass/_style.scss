@@ -28,6 +28,7 @@ body {
     box-sizing: border-box;
     color: $color-dark;
     background-color: $color-light-2;
+    font-weight: 700;
 }
 
 .container {
@@ -36,15 +37,75 @@ body {
     padding: 0 2rem;
 }
 
+ul {
+    list-style-type: none;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+.btn {
+    text-transform: uppercase;
+    padding: .8rem 1.8rem;
+    border-radius: .4rem;
+    font-size: 1.1rem;
+    letter-spacing: 1.2px;
+    border: 1px solid;
+    &__primary {
+        background: $color-primary;
+        color: $color-light-2 !important;
+        border-color: currentColor;
+        transition: 0.2s ease-in-out;
+        &:hover {
+            color: hsl(237, 63%, 64%) !important;
+            background: transparent;
+        }
+    }
+    &__light {
+        background: $color-light-2;
+        color: hsl(237, 63%, 64%) !important;
+        border: 1px solid #ffffff;
+        &:hover {
+            background: transparent;
+            color: $color-light-2 !important;
+        }
+    }
+}
+
 .title {
+    color: $color-blue;
     &__main {
         font-size: 2.8rem;
-        color: $color-blue;
+    }
+    &__small {
+        font-size: 1.5rem;
     }
 }
 
 .pricing {
     padding: 4rem 0;
+    min-height: 100vh;
+    background-image: url('../images/bg-top.svg');
+    background-repeat: no-repeat;
+    background-position:top right;
+    background-size: auto;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('../images/bg-bottom.svg');
+        background-repeat: no-repeat;
+        background-position:bottom left;
+        background-size: auto;
+        z-index: -1;
+    }
     &__header {
         text-align: center;
         .title.title__main {
@@ -69,6 +130,8 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
+            width: fit-content;
+            margin: 0 auto;
             &:hover {
                 cursor: pointer;
                 span {
@@ -100,5 +163,107 @@ body {
         }
     }
 
-    
+    &__plan-list {
+        margin: 7rem auto 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.2s ease-in-out;
+        @media (max-width:767px) {
+            flex-direction: column;
+        }
+        &__item {
+            flex: 0 1 30rem;
+            text-align: center;
+            padding: 2rem 2.2rem;
+            background-color: #ffffff;
+            border-radius: .7rem;
+            box-shadow: 0px 6px 11px 1px rgba($color-blue, 0.4);
+
+            @media (min-width:768px) {
+                &:first-of-type {
+                    border-top-right-radius: 0;
+                    border-bottom-right-radius: 0;
+                }
+                &:last-of-type {
+                    border-top-left-radius: 0;
+                    border-bottom-left-radius: 0;
+                }
+            }
+
+            @media (max-width:767px) {
+                width: 40rem;
+                &:not(:last-child){
+                    margin-bottom: 3rem;
+                }
+            }
+            @media (max-width:424px) {
+                width: 30rem;
+            }
+
+            
+            .title {
+                margin-bottom: .3rem;
+            }
+            .price {
+                font-size: 4.4rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .dollar {
+                    font-size: 2.4rem;
+                    margin-right: .5rem;
+                }
+            }
+            ul {
+                margin:1rem 0 2rem;
+                li {
+                    padding: 1.2rem 0;
+                    font-size: 1.2rem;
+                    color: $color-blue;
+                    &:first-child {
+                        border-top: 1px solid $color-light-1;
+                    }
+                    &:not(:last-child) {
+                        border-bottom: 1px solid $color-light-1;;
+                    }
+                    &:last-child {
+                        border-bottom: 1px solid rgba($color-light-1,0.7);
+                    }
+                }
+            }
+            .btn {
+                display: block;
+            }
+
+            &-professional {
+                background: $color-primary;
+                padding-top: 4.2rem;
+                padding-bottom: 4.2rem;
+                .title {
+                    color: $color-light-2;
+                }
+                .price {
+                    color: $color-light-2;
+                }
+                ul li {
+                    color: $color-light-2;
+                }
+            }
+        }
+
+    }
+
+    &__plan-list__monthly {
+        display: none;
+    }
+
+    &#pricing.monthly__view {
+        .pricing__plan-list__annually {
+            display: none;
+        }
+        .pricing__plan-list__monthly {
+            display: flex;
+        }
+    }
 }

@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <div class="pricing">
+  <div class="pricing" id="pricing">
     <div class="container">
       <div class="pricing__header">
         <h1 class="title title__main">Our Pricing</h1>
@@ -23,11 +23,74 @@
           Monthly
         </label>
       </div>
-      <ul class="pricing__plan">
-
+      <ul class="pricing__plan-list pricing__plan-list__annually">
+        <li class="pricing__plan-list__item pricing__plan-list__item-basic">
+          <h3 class="title title__small">Basic</h3>
+          <span class="price"><span class="dollar">&dollar;</span>199.99</span>
+          <ul>
+            <li>500 GB Storage</li>
+            <li>2 Users Allowed</li>
+            <li>Send up to 3 GB</li>
+          </ul>
+          <a href="#" class="btn btn__primary">Learn More</a>
+        </li>
+        <li class="pricing__plan-list__item pricing__plan-list__item-professional">
+          <h3 class="title title__small">Professional</h3>
+          <span class="price"><span class="dollar">&dollar;</span>249.99</span>
+          <ul>
+            <li>1 TB Storage</li>
+            <li>5 Users Allowed</li>
+            <li>Send up to 10 GB</li>
+          </ul>
+          <a href="#" class="btn btn__light">Learn More</a>
+        </li>
+        <li class="pricing__plan-list__item pricing__plan-list__item-master">
+          <h3 class="title title__small">Master</h3>
+          <span class="price"> <span class="dollar">&dollar;</span> 399.99</span>
+          <ul>
+            <li>2 TB Storage</li>
+            <li>10 Users Allowed</li>
+            <li>Send up to 20 GB</li>
+          </ul>
+          <a href="#" class="btn btn__primary">Learn More</a>
+        </li>
+      </ul>
+      <ul class="pricing__plan-list pricing__plan-list__monthly">
+        <li class="pricing__plan-list__item pricing__plan-list__item-basic">
+          <h3 class="title title__small">Basic</h3>
+          <span class="price"><span class="dollar">&dollar;</span>19.99</span>
+          <ul>
+            <li>500 GB Storage</li>
+            <li>2 Users Allowed</li>
+            <li>Send up to 3 GB</li>
+          </ul>
+          <a href="#" class="btn btn__primary">Learn More</a>
+        </li>
+        <li class="pricing__plan-list__item pricing__plan-list__item-professional">
+          <h3 class="title title__small">Professional</h3>
+          <span class="price"><span class="dollar">&dollar;</span>24.99</span>
+          <ul>
+            <li>1 TB Storage</li>
+            <li>5 Users Allowed</li>
+            <li>Send up to 10 GB</li>
+          </ul>
+          <a href="#" class="btn btn__light">Learn More</a>
+        </li>
+        <li class="pricing__plan-list__item pricing__plan-list__item-master">
+          <h3 class="title title__small">Master</h3>
+          <span class="price"> <span class="dollar">&dollar;</span> 39.99</span>
+          <ul>
+            <li>2 TB Storage</li>
+            <li>10 Users Allowed</li>
+            <li>Send up to 20 GB</li>
+          </ul>
+          <a href="#" class="btn btn__primary">Learn More</a>
+        </li>
       </ul>
     </div>
   </div>
+
+  <script src="./js/main.js"></script>
 </body>
 
 </html>
