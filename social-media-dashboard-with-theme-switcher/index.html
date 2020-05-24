@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Frontend Mentor | Social Media Dashboard With Theme Switcher</title>
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+
+  <div class="dashboard">
+    <div class="container">
+      <div class="dashboard__header">
+        <h1 class="title title__main">Social Media Dashboard
+          <span class="dashboard__total-followers">Total Followers:
+            23,004
+          </span>
+        </h1>
+        <div class="dashboard__theme-switcher">
+          <input type="checkbox" id="theme__switcher">
+          <label for="theme__switcher">Dark Mode <span></span> </label>
+        </div>
+      </div>
+      <ul class="dashboard__follower-list">
+        <li class="dashboard__follower-card">
+          <span class="media__name">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+              <path fill="#178FF5"
+                d="M18.896 0H1.104C.494 0 0 .494 0 1.104v17.793C0 19.506.494 20 1.104 20h9.58v-7.745H8.076V9.237h2.606V7.01c0-2.583 1.578-3.99 3.883-3.99 1.104 0 2.052.082 2.329.119v2.7h-1.598c-1.254 0-1.496.597-1.496 1.47v1.928h2.989l-.39 3.018h-2.6V20h5.098c.608 0 1.102-.494 1.102-1.104V1.104C20 .494 19.506 0 18.896 0z" />
+            </svg>
+            @nathanf
+          </span>
+          <span class="followers__number">
+            <span class="number">
+              1987
+            </span>
+            Followers
+          </span>
+          <span class="follower__stat">
+            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="4">
+              <path fill="#1EB589" fill-rule="evenodd" d="M0 4l4-4 4 4z" />
+            </svg>
+            12 Today
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+
+</html>

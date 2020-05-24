@@ -90,6 +90,9 @@ a:visited {
     .content-box__bottom {
         flex-direction: column;
     }
+    .bottom__left {
+        border-bottom-left-radius: 0px;
+    }
 }
 
 .content-box__bottom > div{
@@ -103,6 +106,12 @@ a:visited {
     flex-direction: column;
     justify-content: space-between;
     border-bottom-left-radius: 10px;
+}
+
+@media (max-width:375px) {
+    .bottom__left {
+        border-bottom-left-radius: 0px;
+    }
 }
 
 .title__left-1,
@@ -150,7 +159,11 @@ a:visited {
     flex-direction: column;
     justify-content: space-between;
     border-bottom-right-radius: 10px;
-
+}
+@media (max-width:375px) {
+    .bottom__right {
+        border-bottom-left-radius: 10px;
+    }
 }
 
 .right__list {

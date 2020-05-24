@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+// primary
+$color-green: hsl(163, 72%, 41%);
+$color-red: hsl(356, 69%, 56%);
+
+// social media
+$color-facebook: hsl(195, 100%, 50%);
+$color-twitter: hsl(203, 89%, 53%);
+$color-instagram: linear-gradient(hsl(37, 97%, 70%),hsl(329, 70%, 58%));
+$color-youtube: hsl(348, 97%, 39%);
+
+// dark theme toggler
+$color-dark-toggler: linear-gradient(to right, hsl(210, 78%, 56%) , hsl(146, 68%, 55%));
+// light theme toggler
+$color-light-toggler: hsl(230, 22%, 74%);
+
+// DARK THEME
+$color-bg-1-dark: hsl(230, 17%, 14%); //BACKGROUND
+$color-bg-2-dark: hsl(232, 19%, 15%); //TOP BACKGROUND PATTERN
+$color-card-dark: hsl(228, 28%, 20%); //CARD BACKGROUND
+$color-text-dark: hsl(228, 34%, 66%); //TEXT
+$color-white-text-dark: hsl(0, 0%, 100%); //TEXT
+
+// LIGHT THEME
+$color-bg-1-light: hsl(0, 0%, 100%); //BACKGROUND
+$color-bg-2-light: hsl(225, 100%, 98%); //TOP BACKGROUND PATTERN
+$color-card-light: hsl(227, 47%, 96%); //CARD BACKGROUND
+$color-text-light: hsl(228, 12%, 44%); //TEXT
+$color-blue-text-light: hsl(230, 17%, 14%); //TEXT
+
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: inherit;
+}
+
+body {
+    position: relative;
+    font-size: 1.4rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+}
+
+.container {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.title{
+    color: $color-white-text-dark;
+    font-weight: 700;
+    &__main {
+        font-size: 2.4rem;
+        line-height: 1.5;
+    }
+}
+
+.dashboard {
+    background-color: $color-bg-1-dark;
+    position: relative;
+    padding: 3rem 0;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 20rem;
+        background-color: $color-bg-2-dark;
+    }
+
+    &__header {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__total-followers {
+        display: block;
+        font-size: 1.4rem;
+        color: $color-text-dark;
+    }
+    &__theme-switcher {
+        input {
+            display: none;
+        }
+        input[type='checkbox']:checked + label {
+            span{
+                &::before {
+                    left: 50%;
+                }
+            }
+        }
+        label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $color-text-dark;
+            font-weight: 700;
+            font-family: inherit;
+            font-size: inherit;
+            &:hover {
+                cursor: pointer;
+            }
+            span{
+                margin-left: 1rem;
+                width: 4.2rem;
+                height: 2rem;
+                background:$color-dark-toggler;
+                border-radius: 100px;
+                position: relative;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 10%;
+                    transform: translateY(-50%);
+                    width: 1.6rem;
+                    height: 1.6rem;
+                    border-radius: 100%;
+                    background-color: $color-bg-2-dark;
+                }
+            }
+        }
+    }
+}

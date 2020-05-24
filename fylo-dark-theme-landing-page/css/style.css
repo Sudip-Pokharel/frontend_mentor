@@ -162,8 +162,10 @@ ul {
   align-items: center;
   text-align: center;
 }
-.intro .container img {
-  width: 100%;
+@media (max-width: 768px) {
+  .intro .container img {
+    width: 100%;
+  }
 }
 .intro__title {
   max-width: 70rem;
