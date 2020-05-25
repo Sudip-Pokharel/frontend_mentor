@@ -64,7 +64,7 @@ a:visited {
     text-transform: uppercase;
     font-weight: 700;
     &__main {
-        font-size: 4.8rem;
+        font-size: 6.2rem;
     }
 }
 
@@ -76,7 +76,7 @@ a:visited {
         top: 0;
         right: 0;
         width: 50%;
-        height: 50%;
+        height: 60%;
         background-color: $color-light;
         z-index: -1;
         border-bottom-left-radius: 10rem;
@@ -129,11 +129,20 @@ a:visited {
         
     }
     .hero {
-        display: flex;
+        // display: flex;
         // justify-content: flex-start;
         // align-items: center;
-        & > div {
-            // flex: 0 0 50%;
+        // & > div {
+        //     flex: 0 0 50%;
+        // }
+        background-image: url('../images/illustration-devices.svg');
+        background-repeat: no-repeat;
+        background-position: 152%,right;
+        &__content {
+            // background-image: url('../images/illustration-devices.svg');
+            // background-repeat: no-repeat;
+            // background-position: 600px, top;
+            padding: 9rem 0;
         }
         .title__top {
             display: flex;
@@ -142,16 +151,18 @@ a:visited {
             text-transform: uppercase;
             font-size: 1.5rem;
             margin-bottom: 1rem;
+            letter-spacing: 2px;
             .new {
                 border-radius: 5rem;
                 padding: .2rem .7rem;
                 background-color: $color-dark-2;
                 color: #ffffff;
+                letter-spacing: 0px;
                 margin-right: 1.8rem;
             }
         }
         .title.title__main {
-            max-width: 40rem;
+            max-width: 57rem;
             line-height: 1.2;
             margin-bottom: 2rem;
         }
@@ -167,11 +178,10 @@ a:visited {
                 text-transform: uppercase;
                 color: $color-dark-1;
                 font-size: 1.5rem;
+                letter-spacing: 2px;
             }
 
         }
-        &__image {
-            background-image: url('../images/illustration-devices.svg');
-        }
+       
     }
 }
