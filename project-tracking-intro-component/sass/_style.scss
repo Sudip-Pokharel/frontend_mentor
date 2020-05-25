@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
+
+$color-red: hsl(0, 100%, 68%);
+$color-light: hsl(207, 33%, 95%);
+$color-gray: hsl(231, 7%, 65%);
+$color-dark-1: hsl(230, 11%, 40%);
+$color-dark-2: hsl(230, 29%, 20%);
+
+$heading-font: 'Barlow Condensed', sans-serif; //HEADING CTA NAVIGATION
+$body-font: 'Barlow', sans-serif;
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: inherit;
+}
+
+body {
+    position: relative;
+    box-sizing: border-box;
+    color: $color-dark-2;
+    line-height: 1.7;
+    font-size: 1.8rem;
+    font-family: $body-font;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.btn {
+    text-transform: uppercase;
+    padding: 1rem 1.7rem;
+    font-family: $heading-font;
+    color: #ffffff;
+    border-radius: 0.4rem;
+    &__cta {
+        background-color: $color-red;
+    }
+}
+
+.title {
+    font-family: $heading-font;
+    color: $color-dark-2;
+    text-transform: uppercase;
+    font-weight: 700;
+    &__main {
+        font-size: 4.8rem;
+    }
+}
+
+.header {
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 50%;
+        background-color: $color-light;
+        z-index: -1;
+        border-bottom-left-radius: 10rem;
+    }
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 4rem 0;
+
+        ul {
+            display: flex;
+            align-items: center;
+                .nav__item {
+                    &:not(:last-child) {
+                        padding-right: 2.8rem;
+                    }
+                    .nav__link {
+                        font-family: $heading-font;
+                        font-size: 1.8rem;
+                        font-weight: 700;
+                        color: $color-dark-2;
+                        text-transform: uppercase;
+                        &:hover {
+                            text-decoration: underline;        
+                        }
+                    }
+
+                &:last-child {
+                    .nav__link {
+                        display: flex;
+                        align-items: center;
+                        span.dot {
+                            width: .6rem;
+                            height: .6rem;
+                            border-radius: 100%;
+                            background-color: $color-gray;
+                            margin-right: 3rem;
+                        }
+                        color: $color-gray;
+                    }
+                }
+
+            }
+            
+        }
+
+       
+
+        
+    }
+    .hero {
+        display: flex;
+        // justify-content: flex-start;
+        // align-items: center;
+        & > div {
+            // flex: 0 0 50%;
+        }
+        .title__top {
+            display: flex;
+            align-items: center;
+            color: $color-dark-1;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            .new {
+                border-radius: 5rem;
+                padding: .2rem .7rem;
+                background-color: $color-dark-2;
+                color: #ffffff;
+                margin-right: 1.8rem;
+            }
+        }
+        .title.title__main {
+            max-width: 40rem;
+            line-height: 1.2;
+            margin-bottom: 2rem;
+        }
+        p.paragraph {
+            max-width: 28rem;
+            font-size: $heading-font;
+            color: $color-dark-1;
+            margin-bottom: 4rem;
+        }
+        .cta__wrapper {
+            span {
+                margin-left: 2rem;
+                text-transform: uppercase;
+                color: $color-dark-1;
+                font-size: 1.5rem;
+            }
+
+        }
+        &__image {
+            background-image: url('../images/illustration-devices.svg');
+        }
+    }
+}
