@@ -21,6 +21,19 @@
           </g>
         </svg>
         <ul>
+          <li class="hide-on__desktop menu__trigger--open">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="16">
+              <g fill="#242942" fill-rule="evenodd">
+                <path d="M0 0h24v2H0zM0 7h24v2H0zM0 14h24v2H0z" />
+              </g>
+            </svg>
+          </li>
+          <li class="hide-on__desktop menu__trigger--close">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+              <path fill="#242942" fill-rule="evenodd"
+                d="M17.778.808l1.414 1.414L11.414 10l7.778 7.778-1.414 1.414L10 11.414l-7.778 7.778-1.414-1.414L8.586 10 .808 2.222 2.222.808 10 8.586 17.778.808z" />
+            </svg>
+          </li>
           <li class="nav__item">
             <a class="nav__link" href="#">Product</a>
           </li>
@@ -33,11 +46,28 @@
           <li class="nav__item">
             <a class="nav__link" href="#"> <span class="dot"></span> <span class="name">Login</span></a>
           </li>
+
+        </ul>
+      </nav>
+      <nav id="mobile__nav" class="hide-on__desktop">
+        <ul>
+          <li class="nav__item">
+            <a class="nav__link" href="#">Product</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#">Features</a>
+          </li>
+          <li class="nav__item line__after">
+            <a class="nav__link" href="#">Pricing</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#"> Login</a>
+          </li>
         </ul>
       </nav>
     </div>
-    <div class="hero">
-      <div class="container hero__content">
+    <div class="hero container">
+      <div class="hero__content">
         <span class="title__top">
           <span class="new">NEW</span>
           Monograph Dashboard
@@ -46,10 +76,10 @@
         <p class="paragraph">Project planning and time tracking for agile teams</p>
         <div class="cta__wrapper">
           <a href="#" class="btn btn__cta">Schedule a demo</a>
-          <span>to see a live preview</span>
+          <span>to see a preview</span>
         </div>
       </div>
-      <!-- <div class="hero__image">
+      <div class="hero__image">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="960" height="464">
           <defs>
             <rect id="a" width="597.554" height="396.861" x="0" y="0" rx="3" />
@@ -195,9 +225,10 @@
             </g>
           </g>
         </svg>
-      </div> -->
-    </div>
+      </div>
   </header>
+
+  <script src="./js/main.js"></script>
 
 </body>
 
