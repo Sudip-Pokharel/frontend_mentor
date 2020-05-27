@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  font-size: 1.8rem;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #9194a1;
+  background: #ffffff;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.btn {
+  font-weight: 500;
+  border-radius: 0.4rem;
+  border: 2px solid;
+  box-shadow: 0px 3px 6px 0px rgba(37, 43, 70, 0.2);
+  transition: 0.2s ease-in-out;
+}
+.btn__primary {
+  padding: 0.8rem 3.2rem;
+  font-size: 1.3rem !important;
+  background-color: #fa5757;
+  color: #ffffff !important;
+  border-color: #fa5757;
+}
+.btn__primary:hover {
+  background-color: #ffffff;
+  color: #fa5757 !important;
+}
+.btn__secondary {
+  padding: 1.4rem 2.6rem;
+  font-size: 1.4rem;
+  color: #ffffff;
+  background-color: #5368df;
+  border-color: #5368df;
+}
+.btn__secondary:hover {
+  color: #5368df;
+  background-color: #ffffff;
+}
+.btn__light {
+  padding: 1.4rem 2.6rem;
+  font-size: 1.4rem;
+  background-color: #efefef;
+  border-color: #efefef;
+  color: #252b46;
+}
+.btn__light:hover {
+  background-color: #ffffff;
+  border-color: #252b46;
+}
+
+.title__main {
+  font-size: 4.8rem;
+  color: #252b46;
+  line-height: 1.1;
+  font-weight: 500;
+}
+
+.header {
+  overflow: hidden;
+}
+.header .nav {
+  padding: 3rem 10rem 3rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .nav ul.navigation {
+  display: flex;
+  align-items: center;
+}
+.header .nav ul.navigation .nav__item .nav__link {
+  color: #252b46;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.2s ease-in-out;
+}
+.header .nav ul.navigation .nav__item .nav__link:hover {
+  color: #fa5757;
+}
+.header .nav ul.navigation .nav__item:not(:last-child) {
+  margin-right: 3.2rem;
+}
+.header .hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4rem;
+}
+.header .hero > div {
+  flex: 0 1 50%;
+}
+.header .hero__content {
+  max-width: 50rem;
+}
+.header .hero__content .title.title__main {
+  margin-bottom: 2.6rem;
+}
+.header .hero__content p.paragraph {
+  margin-bottom: 2.6rem;
+}
+.header .hero__content .cta__box {
+  margin-top: 3.2rem;
+}
+.header .hero__content .cta__box a:first-child {
+  margin-right: 1.2rem;
+}
+.header .hero__image {
+  position: relative;
+}
+.header .hero__image::before {
+  content: "";
+  position: absolute;
+  top: 29%;
+  left: 25%;
+  width: 82%;
+  height: 70%;
+  border-bottom-left-radius: 20rem;
+  background-color: #5368df;
+  z-index: -1;
+}
+
+/*# sourceMappingURL=style.css.map */
