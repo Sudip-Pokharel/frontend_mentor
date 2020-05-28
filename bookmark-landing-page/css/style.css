@@ -89,6 +89,9 @@ ul {
 .title__medium {
   font-size: 2.6rem;
 }
+.title__small {
+  font-size: 1.9rem;
+}
 
 .header {
   overflow: hidden;
@@ -102,6 +105,7 @@ ul {
 .header .nav ul.navigation {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .header .nav ul.navigation .nav__item .nav__link {
   color: #252b46;
@@ -160,8 +164,9 @@ ul {
 }
 .feature__header {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 .feature__header .title.title__medium {
   margin-bottom: 2rem;
@@ -183,6 +188,10 @@ ul {
   padding: 0.3rem 5rem 3rem;
   border-bottom: 4px solid transparent;
   transition: 0.2s ease-in-out;
+  transition: font-weight 0s;
+}
+.feature__tab li a:hover {
+  color: #fa5757;
 }
 .feature__tab li a::before {
   content: "";
@@ -195,6 +204,10 @@ ul {
 }
 .feature__tab li a.active {
   border-bottom: 4px solid #fa5757;
+  font-weight: 500;
+}
+.feature__tab li a.active:hover {
+  color: #252b46;
 }
 .feature__tab li a.active::before {
   opacity: 0;
@@ -228,6 +241,7 @@ ul {
   z-index: -1;
 }
 .feature__tab-content-wrapper .feature__tab-content .content {
+  flex: 0 0 45%;
   padding-left: 6rem;
 }
 .feature__tab-content-wrapper .feature__tab-content .content .title.title__medium {
@@ -237,6 +251,152 @@ ul {
   font-size: 1.5rem;
   max-width: 36.5rem;
   margin-bottom: 3rem;
+}
+
+.download {
+  padding: 10rem 0;
+}
+.download__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.download__header .title.title__medium {
+  margin-bottom: 2rem;
+}
+.download__header p.paragraph {
+  max-width: 53.5rem;
+  text-align: center;
+  margin-bottom: 0;
+}
+.download__list {
+  display: flex;
+  justify-content: center;
+}
+.download__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.download__item:nth-of-type(2) .download__item-wrapper {
+  margin-top: 6rem;
+}
+.download__item:nth-of-type(3) .download__item-wrapper {
+  margin-top: 12rem;
+}
+.download__item-wrapper {
+  padding: 7rem 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 0.7rem;
+  box-shadow: 0px 16px 21px -6px rgba(37, 43, 70, 0.2);
+}
+.download__item-wrapper #dot__line {
+  margin-bottom: 2.5rem;
+}
+.download__item-wrapper .btn.btn__secondary {
+  padding: 0.7rem 2.1rem;
+}
+.download__item-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 2.4rem;
+}
+.download__item-content::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.download__item-content .title.title__small {
+  margin: 2rem 0 0.5rem;
+}
+.download__item-content .version {
+  margin-bottom: 0.4rem;
+  font-size: 1.4rem;
+}
+.download__item:not(:last-child) {
+  margin-right: 3rem;
+}
+
+.faq {
+  padding: 5rem 0;
+}
+.faq__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.faq__header .title.title__medium {
+  margin-bottom: 2rem;
+}
+.faq__header p.paragraph {
+  max-width: 53.5rem;
+  text-align: center;
+  margin-bottom: 4.8rem;
+}
+.faq__list {
+  max-width: 58rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: column;
+}
+.faq__list-item {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(145, 148, 161, 0.7);
+}
+.faq__list-item:first-child {
+  border-top: 1px solid rgba(145, 148, 161, 0.7);
+}
+.faq__list-item a.faq__link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 1rem 3rem 1rem 0;
+  color: #252b46;
+  font-size: 1.7rem;
+  font-weight: 500;
+  transition: 0.2s ease-in-out;
+}
+.faq__list-item a.faq__link:hover {
+  color: #fa5757;
+}
+.faq__list-item a.faq__link.active span {
+  transform: rotate(180deg);
+}
+.faq__list-item a.faq__link.active span svg path {
+  stroke: #fa5757;
+}
+.faq__list-item a.faq__link.active + .faq__content {
+  display: block;
+  opacity: 1;
+}
+.faq__list-item p.faq__content {
+  color: #252b46;
+  font-size: 1.6rem;
+  padding: 2rem 0;
+  line-height: 36px;
+  display: none;
+  opacity: 0;
+  transition: 0.2s ease-in-out;
+}
+.faq .btn__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4rem;
 }
 
 /*# sourceMappingURL=style.css.map */
