@@ -37,6 +37,16 @@ ul {
   padding: 0 2rem;
 }
 
+input {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  border: none;
+}
+input:focus {
+  outline: none;
+}
+
 .btn {
   font-weight: 500;
   border-radius: 0.4rem;
@@ -397,6 +407,136 @@ ul {
   align-items: center;
   justify-content: center;
   margin-top: 4rem;
+}
+
+.footer {
+  margin-top: 5rem;
+}
+.footer__upper {
+  background-color: #5368df;
+  padding: 5rem 0 7rem;
+}
+.footer__upper .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.footer__upper .content .join__number {
+  color: #ffffff;
+  letter-spacing: 0.5rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  margin-bottom: 4rem;
+}
+.footer__upper .content .title.title__medium {
+  color: #ffffff;
+  font-size: 3.4rem;
+  max-width: 50rem;
+  text-align: center;
+  margin-bottom: 3.8rem;
+}
+.footer__upper .content form {
+  width: 50rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.footer__upper .content form .input__wrapper {
+  width: 64%;
+  border-radius: 0.4rem;
+  padding: 0.2rem;
+}
+.footer__upper .content form .input__wrapper.error {
+  background-color: #fa5757;
+}
+.footer__upper .content form .input__wrapper.error .input__box #error__icon {
+  opacity: 1;
+}
+.footer__upper .content form .input__wrapper.error .error__message {
+  display: inline;
+  opacity: 1;
+}
+.footer__upper .content form .input__wrapper .input__box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.footer__upper .content form .input__wrapper .input__box #error__icon {
+  position: absolute;
+  right: 2rem;
+  opacity: 0;
+}
+.footer__upper .content form .input__wrapper .error__message {
+  font-size: 1.4rem;
+  color: #ffffff;
+  font-style: italic;
+  padding-left: 1.2rem;
+  display: none;
+  opacity: 0;
+}
+.footer__upper .content form input[type=text] {
+  width: 100%;
+  border-radius: 0.4rem;
+  padding: 1.8rem 4.8rem 1.8rem 2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #252b46;
+}
+.footer__upper .content form input[type=text]::placeholder {
+  color: #cdcdcd;
+  font-weight: 400;
+}
+.footer__upper .content form a.btn__primary {
+  padding: 1.35rem 3.2rem;
+  font-size: 1.6rem !important;
+}
+.footer__lower {
+  background-color: #252b46;
+  padding: 3rem 0;
+}
+.footer__lower .links__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer__lower .links__wrapper .quick__links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer__lower .links__wrapper .quick__links ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 6rem;
+}
+.footer__lower .links__wrapper .quick__links ul li a {
+  color: #ffffff;
+  transition: 0.2s ease-in-out;
+  font-size: 1.4rem;
+  letter-spacing: 0.2rem;
+}
+.footer__lower .links__wrapper .quick__links ul li a:hover {
+  color: #fa5757;
+}
+.footer__lower .links__wrapper .quick__links ul li:not(:last-child) {
+  padding-right: 3.2rem;
+}
+.footer__lower .links__wrapper .media__links ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer__lower .links__wrapper .media__links ul li a:hover svg path {
+  transition: 0.2s ease-in-out;
+  fill: #fa5757;
+}
+.footer__lower .links__wrapper .media__links ul li:first-child {
+  margin-right: 3.2rem;
 }
 
 /*# sourceMappingURL=style.css.map */
