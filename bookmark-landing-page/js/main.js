@@ -3,7 +3,10 @@ const tabLink = document.querySelectorAll('.feature__tab-link'),
     faqLink = document.querySelectorAll('a.faq__link'),
     inputWrapper = document.querySelector('.input__wrapper'),
     checkEmailBtn = document.getElementById("contact__us-btn"),
-    inputEmail = document.getElementById("email__input");
+    inputEmail = document.getElementById("email__input"),
+    body = document.querySelector('body'),
+    triggerMenuOpen = document.getElementById("menu-trigger__open"),
+    triggerMenuClose = document.getElementById("menu-trigger__close");
 
 tabLink.forEach(function (link) {
     link.addEventListener('click', function (e) {
@@ -58,3 +61,13 @@ function ValidateEmail(input) {
         return false;
     }
 }
+
+triggerMenuOpen.addEventListener('click', function (e) {
+    e.preventDefault();
+    body.classList.add("menu__open");
+})
+
+triggerMenuClose.addEventListener('click', function (e) {
+    e.preventDefault();
+    body.classList.remove("menu__open");
+})
