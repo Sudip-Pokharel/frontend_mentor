@@ -191,13 +191,22 @@ input:focus {
   top: 10rem;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: calc(100vh - 10rem);
   z-index: 999;
   display: none;
   opacity: 0;
   visibility: hidden;
 }
+.header #mobile__nav .container {
+  height: 100%;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .header #mobile__nav ul {
+  width: 100%;
   max-width: 38rem;
   margin: 0 auto;
   text-align: center;
@@ -226,6 +235,19 @@ input:focus {
 }
 .header #mobile__nav ul li a.btn {
   display: block;
+}
+.header #mobile__nav .media__links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 3rem;
+}
+.header #mobile__nav .media__links a:first-child {
+  margin-right: 3.2rem;
+}
+.header #mobile__nav .media__links a:hover svg path {
+  transition: 0.2s ease-in-out;
+  fill: #fa5757;
 }
 .header .nav {
   position: relative;
