@@ -23,7 +23,7 @@
       </div>
       <div class="intro__form">
         <a href="#" class="btn btn__primary">Try it free 7 days <span> then $20/mo. thereafter </span></a>
-        <form>
+        <form id="signup__form">
           <div class="input__box">
             <input type="text" placeholder="First Name">
             <p class="error__message">First Name cannot be empty</p>
@@ -41,14 +41,16 @@
             <p class="error__message">Password cannot be empty</p>
           </div>
 
-          <a href="#" class="btn btn__secondary">Claim your free trial</a>
-          <span class="agree__statement">By clicking the button, you are agreeing to our
+          <a href="#" class="btn btn__secondary" id="submit__btn">Claim your free trial</a>
+          <p class="agree__statement">By clicking the button, you are agreeing to our
             <span class="terms"> Terms and Services</span>
-          </span>
+          </p>
         </form>
       </div>
     </div>
   </div>
+
+  <script src="./js/main.js"></script>
 
 </body>
 
