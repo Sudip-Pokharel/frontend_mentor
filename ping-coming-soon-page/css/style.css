@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 2rem;
+  background-color: #ffffff;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+input {
+  font-family: inherit;
+  font-size: inherit;
+  border: 0.02rem solid #c2d3ff;
+  padding: 1.4rem 4rem 1.3rem 2rem;
+  border-radius: 5rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #151f29;
+}
+input::placeholder {
+  color: #969696;
+  font-size: 1.5rem;
+}
+input:focus {
+  outline: none;
+}
+
+.btn__primary {
+  padding: 1.6rem 3.4rem;
+  border-radius: 5rem;
+  background-color: #4f7df3;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 600;
+  box-shadow: 0 0.2rem 0.7rem 0.3rem rgba(79, 125, 243, 0.3);
+  transition: 0.2s ease-in-out;
+}
+.btn__primary:hover {
+  background-color: rgba(79, 125, 243, 0.8);
+}
+
+.title__main {
+  font-size: 4.2rem;
+  color: #969696;
+  font-weight: 300;
+}
+.title__main span {
+  font-weight: 700;
+  color: #151f29;
+}
+@media (max-width: 767px) {
+  .title__main {
+    font-size: 3.2rem;
+    text-align: center;
+  }
+}
+
+.main__box {
+  padding: 5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 60rem;
+  margin: 0 auto;
+}
+.main__box .logo {
+  margin-bottom: 3.4rem;
+}
+.main__box .title.title__main {
+  margin-bottom: 1.2rem;
+}
+.main__box p.paragraph {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #151f29;
+  margin-bottom: 2rem;
+}
+.main__box form {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  width: 60rem;
+  margin-bottom: 8rem;
+}
+@media (max-width: 767px) {
+  .main__box form {
+    flex-direction: column;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.main__box form .input__box {
+  flex-basis: 68%;
+  margin-right: 2rem;
+}
+@media (max-width: 767px) {
+  .main__box form .input__box {
+    width: 96%;
+    margin-bottom: 2rem;
+    flex-basis: auto;
+  }
+}
+.main__box form .input__box input {
+  width: 100%;
+}
+.main__box form .input__box .error__message {
+  margin-top: 0.8rem;
+  font-size: 1.2rem;
+  padding-left: 2rem;
+  color: #ff5263;
+  font-style: italic;
+  display: none;
+  opacity: 0;
+}
+@media (max-width: 767px) {
+  .main__box form .input__box .error__message {
+    text-align: center;
+  }
+}
+.main__box form .input__box.error input {
+  border-color: #ff5263;
+}
+.main__box form .input__box.error .error__message {
+  display: block;
+  opacity: 1;
+}
+.main__box form .btn.btn__primary {
+  text-align: center;
+  flex-basis: calc(100% - 68% - 2rem);
+}
+@media (max-width: 767px) {
+  .main__box form .btn.btn__primary {
+    width: 96%;
+  }
+}
+.main__box img {
+  width: 100%;
+  margin-bottom: 5.8rem;
+}
+.main__box .media__icon {
+  display: flex;
+  margin-bottom: 2.8rem;
+}
+.main__box .media__icon li {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 100%;
+  border: 0.03rem solid rgba(150, 150, 150, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main__box .media__icon li:not(:last-child) {
+  margin-right: 1rem;
+}
+.main__box .media__icon li:hover {
+  background-color: #4f7df3;
+}
+.main__box .media__icon li:hover a svg path {
+  fill: #ffffff;
+}
+.main__box .media__icon li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main__box .media__icon li a svg {
+  transform: scale(0.8);
+}
+.main__box .copyright__para {
+  font-size: 1.5rem;
+  color: #969696;
+}
+
+/*# sourceMappingURL=style.css.map */
