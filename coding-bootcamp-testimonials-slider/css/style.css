@@ -32,15 +32,28 @@ body {
   padding: 5rem 6rem;
   background-image: url("../images/pattern-bg.svg");
   background-size: contain;
-  background-position: right;
+  background-position: 90%;
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
+}
+@media (max-width: 768px) {
+  .container .testimonial {
+    flex-direction: column-reverse;
+    background-position: top;
+    padding-bottom: 20rem;
+  }
 }
 .container .testimonial .content {
   flex: 0 0 60%;
   position: relative;
   z-index: 3;
+}
+@media (max-width: 768px) {
+  .container .testimonial .content {
+    margin-top: 13rem;
+    text-align: center;
+  }
 }
 .container .testimonial .content::before {
   content: "";
@@ -50,11 +63,26 @@ body {
   width: 12rem;
   height: 10rem;
   background-image: url("../images/pattern-quotes.svg");
+  background-repeat: no-repeat;
   z-index: 1;
+}
+@media (max-width: 768px) {
+  .container .testimonial .content::before {
+    width: 10rem;
+    height: 8rem;
+    background-size: contain;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 .container .testimonial .content .paragraph {
   font-weight: 300;
   margin-bottom: 4rem;
+}
+@media (max-width: 768px) {
+  .container .testimonial .content .paragraph {
+    font-size: 2.2rem;
+  }
 }
 .container .testimonial .content .name {
   font-size: 2rem;
@@ -65,13 +93,25 @@ body {
   color: #babacf;
   font-weight: 300;
 }
+@media (max-width: 768px) {
+  .container .testimonial .content .name span {
+    display: block;
+  }
+}
 .container .testimonial .image {
   position: relative;
   z-index: 2;
   flex: 0 0 40%;
 }
 .container .testimonial .image img {
-  margin-left: -10rem;
+  width: 100%;
+  margin-left: -8rem;
+  border-radius: 0.5rem;
+}
+@media (max-width: 768px) {
+  .container .testimonial .image img {
+    margin-left: 0;
+  }
 }
 .container .testimonial .image .nav__icon {
   position: absolute;
@@ -84,6 +124,12 @@ body {
   align-items: center;
   justify-content: space-between;
   box-shadow: 0 0 4.7rem 1.2rem rgba(32, 32, 70, 0.29);
+}
+@media (max-width: 768px) {
+  .container .testimonial .image .nav__icon {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 .container .testimonial .image .nav__icon svg:hover {
   cursor: pointer;
