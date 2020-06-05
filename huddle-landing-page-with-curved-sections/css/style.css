@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600;1,700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  line-height: 1.7;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.6rem;
+  color: #00252e;
+  background-color: #ffffff;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+.btn__light {
+  padding: 0.7rem 2.2rem;
+  color: #ff52bf;
+  border: 0.1rem solid #ff52bf;
+  border-radius: 5rem;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  transition: 0.2s ease-in-out;
+}
+.btn__light:hover {
+  color: #ffffff;
+  background-color: #ff52bf;
+}
+.btn__primary {
+  padding: 1.6rem 6rem;
+  background-color: #ff52bf;
+  color: #f5faff;
+  border: 1px solid #ff52bf;
+  border-radius: 5rem;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 600;
+  box-shadow: 0 0.2rem 0.5rem 0.2rem rgba(0, 37, 46, 0.17);
+  transition: 0.2s ease-in-out;
+}
+.btn__primary:hover {
+  background-color: #ffffff;
+  color: #ff52bf;
+  box-shadow: none;
+}
+
+.title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+.title__main {
+  font-size: 4.2rem;
+}
+.title__large {
+  font-size: 7.6rem;
+}
+
+.header .nav {
+  padding: 2.2rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+.header .hero {
+  display: flex;
+  max-width: 88.4rem;
+  margin: 0 auto;
+  padding: 8rem 0;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.header .hero .title.title__main {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.header .hero .paragraph {
+  max-width: 51rem;
+  color: #00252e;
+  font-size: 1.7rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.header .hero__image {
+  margin: 6rem 0;
+  width: 99%;
+  padding-bottom: 72%;
+  background-image: url("../images/screen-mockups.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.header .hero .stat__number {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 90%;
+}
+.header .hero .stat__number .title.title__large {
+  text-align: center;
+  line-height: 1.4;
+}
+.header .hero .stat__number .title.title__large span {
+  display: block;
+  font-size: 2rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  color: #777;
+}
+
+.two-column__item {
+  height: 50rem;
+  background-image: url("../images/bg-section-top-desktop-1.svg"), url("../images/bg-section-bottom-desktop-1.svg");
+  background-repeat: no-repeat;
+  background-position: top, bottom;
+  background-size: contain;
+}
+
+/*# sourceMappingURL=style.css.map */
