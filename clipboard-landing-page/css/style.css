@@ -26,6 +26,10 @@ a:visited {
   text-decoration: none;
 }
 
+ul {
+  list-style-type: none;
+}
+
 .container {
   max-width: 120rem;
   margin: 0 auto;
@@ -38,6 +42,12 @@ a:visited {
 }
 .title__main {
   font-size: 3.9rem;
+}
+.title__medium {
+  font-size: 2.9rem;
+}
+.title__small {
+  font-size: 2.2rem;
 }
 
 .btn {
@@ -91,6 +101,167 @@ a:visited {
 }
 .header__container .btn__box a:first-child {
   margin-right: 1.6rem;
+}
+
+.keep-track {
+  padding: 8rem 0;
+}
+.keep-track__header {
+  max-width: 62rem;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+.keep-track__header .title.title__medium {
+  margin-bottom: 2rem;
+}
+.keep-track__header p.paragraph {
+  font-size: 1.6rem;
+}
+.keep-track__content {
+  display: flex;
+  align-items: center;
+}
+.keep-track__content .image {
+  flex-basis: 50%;
+  padding-bottom: 40%;
+  background-image: url("../images/image-computer.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+}
+.keep-track__content ul {
+  flex-basis: 32.4rem;
+  margin-left: 10%;
+}
+.keep-track__content ul li:not(:last-child) {
+  margin-bottom: 3rem;
+}
+.keep-track__content ul li .title.title__small {
+  margin-bottom: 0.5rem;
+}
+.keep-track__content ul li p.paragraph {
+  font-size: 1.5rem;
+}
+
+.access-anywhere {
+  padding: 8rem 0;
+  text-align: center;
+}
+.access-anywhere .title.title__medium {
+  margin-bottom: 0.5rem;
+}
+.access-anywhere p.paragraph {
+  max-width: 60rem;
+  margin: 0 auto;
+  font-size: 1.6rem;
+  margin-bottom: 3rem;
+}
+.access-anywhere .image {
+  width: 80rem;
+  margin: 0 auto;
+  padding-bottom: 44%;
+  background-image: url("../images/image-devices.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.charge-workflow {
+  padding: 0 0 5rem;
+}
+.charge-workflow__header {
+  max-width: 50rem;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 6rem;
+}
+.charge-workflow__header p.paragraph {
+  font-size: 1.6rem;
+}
+.charge-workflow ul {
+  display: flex;
+  align-items: baseline;
+}
+.charge-workflow ul li {
+  flex-basis: 31%;
+  text-align: center;
+}
+.charge-workflow ul li .title.title__small {
+  margin: 2.8rem 0 1.2rem;
+}
+.charge-workflow ul li p.paragraph {
+  font-size: 1.6rem;
+}
+.charge-workflow ul li:not(:last-child) {
+  margin-right: 2.33%;
+}
+
+.client-logo {
+  padding: 5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.client-logo li img {
+  width: 100%;
+}
+
+.clipboard {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 5rem 0;
+  text-align: center;
+}
+.clipboard__header .title.title__medium {
+  margin-bottom: 0.5rem;
+}
+.clipboard__header p.paragraph {
+  font-size: 1.6rem;
+  margin-bottom: 3rem;
+}
+.clipboard .btn__box a:first-child {
+  margin-right: 1rem;
+}
+
+.footer {
+  padding: 3rem 0;
+  margin-top: 8rem;
+  background-color: #f3f3f3;
+}
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer .quick__links {
+  display: flex;
+  align-items: flex-start;
+}
+.footer .quick__links .footer-logo {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("../images/logo.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin-right: 12rem !important;
+}
+.footer .quick__links > li:not(:last-child) {
+  margin-right: 8rem;
+}
+.footer .quick__links li ul li a {
+  color: #4c545d;
+  font-size: 1.6rem;
+}
+.footer .quick__links li ul li:not(:last-child) {
+  padding-bottom: 1.2rem;
+}
+.footer .social-links {
+  display: flex;
+}
+.footer .social-links li:not(:last-child) {
+  margin-right: 2rem;
 }
 
 /*# sourceMappingURL=style.css.map */
