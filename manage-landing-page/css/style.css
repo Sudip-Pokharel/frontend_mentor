@@ -34,12 +34,17 @@ a:visited {
 
 input {
   font-family: inherit;
-  font-size: 1.5rem;
-  color: inherit;
+  font-size: 1.57rem;
+  color: #f25f3a;
   padding: 1.3rem 1.4rem;
   border-radius: 5rem;
-  border: 1px solid #ffffff;
+  border: 0.1rem solid #ffffff;
   background-color: #ffffff;
+  font-weight: 500;
+}
+input::placeholder {
+  color: #9095a7;
+  font-weight: 500;
 }
 input:focus {
   outline: none;
@@ -67,6 +72,13 @@ input:focus {
 }
 .btn__light:hover {
   color: rgba(242, 95, 58, 0.7);
+}
+.btn__small {
+  background-color: #f25f3a;
+  color: #fafafa;
+}
+.btn__small:hover {
+  background-color: #f58f76;
 }
 
 .title {
@@ -331,8 +343,14 @@ input:focus {
 .footer .footer__links-icons .social__icon {
   display: flex;
 }
+.footer .footer__links-icons .social__icon li a svg path {
+  transition: 0.2s ease-in-out;
+}
+.footer .footer__links-icons .social__icon li a:hover svg path {
+  fill: #f25f3a;
+}
 .footer .footer__links-icons .social__icon li:not(:last-child) {
-  margin-right: 1rem;
+  margin-right: 1.3rem;
 }
 .footer .footer__links-quick li a {
   color: #ffefeb;
@@ -353,13 +371,31 @@ input:focus {
 }
 .footer .footer__links-subscribe form {
   display: flex;
+  align-items: baseline;
+}
+.footer .footer__links-subscribe form .input__box {
+  margin-right: 1rem;
 }
 .footer .footer__links-subscribe form .input__box .error__message {
-  padding-top: 0.5rem;
+  padding-top: 0.3rem;
   padding-left: 1.4rem;
   font-style: italic;
   color: #f25f3a;
   font-size: 1.2rem;
+  opacity: 0;
+  display: none;
+}
+.footer .footer__links-subscribe form .input__box.error input {
+  border-color: #f25f3a;
+}
+.footer .footer__links-subscribe form .input__box.error .error__message {
+  opacity: 1;
+  display: block;
+}
+.footer .footer__links-subscribe p.paragraph.copyright {
+  font-size: 1.4rem;
+  text-align: right;
+  color: #9095a7;
 }
 
 /*# sourceMappingURL=style.css.map */
