@@ -29,6 +29,14 @@ body {
   background-size: 100% 50%;
   background-position: bottom;
 }
+@media (max-width: 991px) {
+  body {
+    background: url("../images/bg-mobile.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+}
 
 .container {
   max-width: 144rem;

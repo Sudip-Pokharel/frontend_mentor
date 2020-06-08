@@ -28,6 +28,13 @@
           </g>
         </svg>
         <ul class="navigation">
+          <li class="show-in--mobile">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="18">
+              <g fill="#242D52" fill-rule="evenodd">
+                <path d="M0 0h25v4H0zM0 7h25v4H0zM0 14h25v4H0z" />
+              </g>
+            </svg>
+          </li>
           <li class="navigation__item"><a href="#" class="navigation__link">Pricing</a></li>
           <li class="navigation__item"><a href="#" class="navigation__link">Product</a></li>
           <li class="navigation__item"><a href="#" class="navigation__link">About Us</a></li>
@@ -103,7 +110,7 @@
       <div class="testimonial">
         <div class="container">
           <h2 class="title title__medium">What they’ve said</h2>
-          <ul class="slider__list">
+          <ul class="slider__list slider__list--show-1">
             <li class="slider__list-item">
               <img src="./images/avatar-anisha.png" alt="">
               <h4 class="title title__small">Anisha Li</h4>
@@ -138,6 +145,12 @@
               </p>
             </li>
           </ul>
+          <ul class="slider__pagination">
+            <li><a href="#" class="pagination-link"></a></li>
+            <li><a href="#" class="pagination-link"></a></li>
+            <li><a href="#" class="pagination-link"></a></li>
+            <li><a href="#" class="pagination-link"></a></li>
+          </ul>
           <a href="#" class="btn btn__primary">Get Started</a>
         </div>
       </div>
@@ -153,6 +166,11 @@
   <footer class="footer">
     <div class="container">
       <ul class="footer__links">
+        <li class="show-in--mobile">
+          <p class="paragraph copyright">
+            Copyright 2020. All Rights Reserved
+          </p>
+        </li>
         <li class="footer__links-icons">
           <svg xmlns="http://www.w3.org/2000/svg" width="146" height="24">
             <g fill="none" fill-rule="evenodd">
@@ -215,14 +233,13 @@
             <li><a href="">Products</a></li>
             <li><a href="">About Us</a></li>
           </ul>
-        </li>
-        <li class="footer__links-quick">
           <ul>
             <li><a href="#">Careers</a></li>
             <li><a href="">Community</a></li>
             <li><a href="">Privacy Policy</a></li>
           </ul>
         </li>
+
         <li class="footer__links-subscribe">
           <form>
             <div class="input__box">
@@ -231,7 +248,7 @@
             </div>
             <a href="#" class="btn btn__small" id="submitBtn">Go</a>
           </form>
-          <p class="paragraph copyright">
+          <p class="paragraph copyright show-in--desktop">
             Copyright 2020. All Rights Reserved
           </p>
         </li>
