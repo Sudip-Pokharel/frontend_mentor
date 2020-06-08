@@ -28,13 +28,24 @@
           </g>
         </svg>
         <ul class="navigation">
-          <li class="show-in--mobile">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="18">
-              <g fill="#242D52" fill-rule="evenodd">
-                <path d="M0 0h25v4H0zM0 7h25v4H0zM0 14h25v4H0z" />
-              </g>
-            </svg>
+          <li class="show-in--mobile" id="trigger-menu--open">
+            <a href="">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="18">
+                <g fill="#242D52" fill-rule="evenodd">
+                  <path d="M0 0h25v4H0zM0 7h25v4H0zM0 14h25v4H0z" />
+                </g>
+              </svg>
+            </a>
           </li>
+          <li class="show-in--mobile" id="trigger-menu--close">
+            <a href="">
+              <svg xmlns="http://www.w3.org/2000/svg" width="21" height="22">
+                <path fill="#242D52" fill-rule="evenodd"
+                  d="M17.925.747l2.828 2.828L13.328 11l7.425 7.425-2.828 2.828-7.425-7.425-7.425 7.425-2.828-2.828L7.671 11 .247 3.575 3.075.747 10.5 8.171 17.925.747z" />
+              </svg>
+            </a>
+          </li>
+
           <li class="navigation__item"><a href="#" class="navigation__link">Pricing</a></li>
           <li class="navigation__item"><a href="#" class="navigation__link">Product</a></li>
           <li class="navigation__item"><a href="#" class="navigation__link">About Us</a></li>
@@ -43,6 +54,16 @@
         </ul>
         <a href="#" class="btn btn__primary">Get Started</a>
       </nav>
+
+      <div id="mobileMenu">
+        <ul>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="">Product</a></li>
+          <li><a href="">About Us</a></li>
+          <li><a href="">Careers</a></li>
+          <li><a href="">Community</a></li>
+        </ul>
+      </div>
 
       <div class="hero">
         <div class="hero__content">
