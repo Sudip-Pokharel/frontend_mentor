@@ -34,4 +34,131 @@ body::before {
   z-index: -1;
 }
 
+ul {
+  list-style-type: none;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+.title__medium {
+  font-size: 1.8rem;
+  color: #2c3a3a;
+}
+.title__small {
+  font-size: 1.4rem;
+  color: #5ba4a4;
+  font-weight: 700;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.filter {
+  padding-top: 10rem;
+  margin-bottom: 4rem;
+}
+
+.job-list__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.8rem 2.4rem 2.8rem 2.7rem;
+  border-radius: 0.7rem;
+  background-color: #ffffff;
+  box-shadow: 0 0.4rem 1rem 0.2rem rgba(91, 164, 164, 0.2);
+}
+.job-list__item:not(:last-child) {
+  margin-bottom: 2.4rem;
+}
+.job-list__item.featured {
+  border-left: 0.5rem solid #5ba4a4;
+}
+.job-list .details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.job-list .details:hover {
+  cursor: pointer;
+}
+.job-list .details:hover .details__content .title.title__medium {
+  color: #5ba4a4;
+}
+.job-list .details__content {
+  padding-left: 2rem;
+}
+.job-list .details__content .header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.job-list .details__content .header span {
+  font-weight: 700;
+}
+.job-list .details__content .header span.title {
+  margin-right: 1.4rem;
+  transition: 0.2s ease-in-out;
+}
+.job-list .details__content .header span.new, .job-list .details__content .header span.featured {
+  color: #effafa;
+  font-size: 1rem;
+  text-transform: uppercase;
+  border-radius: 1.3rem;
+  padding: 0.4rem 0.7rem 0.2rem;
+}
+.job-list .details__content .header span.new {
+  background-color: #5ba4a4;
+  margin-right: 0.8rem;
+}
+.job-list .details__content .header span.featured {
+  background-color: #2c3a3a;
+}
+.job-list .details__content .title.title__medium {
+  margin-bottom: 0.1rem;
+}
+.job-list .details__content .status span {
+  color: #7b8e8e;
+  font-size: 1.3rem;
+}
+.job-list .details__content .status span:not(:first-child) {
+  position: relative;
+  padding-left: 4rem;
+}
+.job-list .details__content .status span:not(:first-child)::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 1.8rem;
+  transform: translateY(-50%);
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 100%;
+  background-color: #7b8e8e;
+}
+.job-list .categories {
+  display: flex;
+}
+.job-list .categories li a {
+  background-color: #eef6f6;
+  font-size: 1.3rem;
+  color: #5ba4a4;
+  font-weight: 700;
+  padding: 1rem 0.9rem;
+  border-radius: 0.3rem;
+  transition: 0.1s ease-in-out;
+}
+.job-list .categories li a:hover {
+  background-color: #5ba4a4;
+  color: #eef6f6;
+}
+.job-list .categories li:not(:last-child) {
+  margin-right: 1rem;
+}
+
 /*# sourceMappingURL=style.css.map */
