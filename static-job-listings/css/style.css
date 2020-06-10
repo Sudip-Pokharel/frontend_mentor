@@ -64,6 +64,9 @@ a:visited {
   margin-bottom: 4rem;
 }
 
+.job-list {
+  padding: 5rem 0 8rem;
+}
 .job-list__item {
   display: flex;
   justify-content: space-between;

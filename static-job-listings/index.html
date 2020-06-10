@@ -23,56 +23,8 @@
       </div>
 
       <ul class="job-list">
-        <li class="job-list__item">
-          <div class="details">
-            <img src="./images/photosnap.svg" alt="Photosnap Logo">
-            <div class="details__content">
-              <div class="header">
-                <span class="title title__small company">Photosnap</span>
-                <span class="new">New!</span>
-                <span class="featured">Featured</span>
-              </div>
-              <h2 class="title title__medium">Senior Frontend Developer</h2>
-              <div class="status">
-                <span class="postedAt">1d ago</span>
-                <span class="contract">Full Time</span>
-                <span class="location">USA only</span>
-              </div>
-            </div>
-          </div>
-          <ul class="categories">
-            <li><a href="#">Frontend</a></li>
-            <li><a href="#">Senior</a></li>
-            <li><a href="#">HTML</a></li>
-            <li><a href="#">CSS</a></li>
-            <li><a href="#">JavaScript</a></li>
-          </ul>
-        </li>
-        <li class="job-list__item">
-          <div class="details">
-            <img src="./images/photosnap.svg" alt="Photosnap Logo">
-            <div class="details__content">
-              <div class="header">
-                <span class="title title__small company">Photosnap</span>
-                <span class="new">New!</span>
-                <span class="featured">Featured</span>
-              </div>
-              <h2 class="title title__medium">Senior Frontend Developer</h2>
-              <div class="status">
-                <span class="postedAt">1d ago</span>
-                <span class="contract">Full Time</span>
-                <span class="location">USA only</span>
-              </div>
-            </div>
-          </div>
-          <ul class="categories">
-            <li><a href="#">Frontend</a></li>
-            <li><a href="#">Senior</a></li>
-            <li><a href="#">HTML</a></li>
-            <li><a href="#">CSS</a></li>
-            <li><a href="#">JavaScript</a></li>
-          </ul>
-        </li>
+        <list-item v-for="(job,index) in jobs" @filter-role="roleFilter" @filter-level="levelFilter"
+          :key="'job__item'+index" :job="job" />
       </ul>
 
     </div>
