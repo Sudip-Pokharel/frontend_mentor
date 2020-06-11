@@ -40,16 +40,17 @@ Vue.component('filter-list', {
     template: `
     <li>
         {{option}}
-        <a href="#">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14">
-            <path fill="#FFF" fill-rule="evenodd"
-            d="M11.314 0l2.121 2.121-4.596 4.596 4.596 4.597-2.121 2.121-4.597-4.596-4.596 4.596L0 11.314l4.596-4.597L0 2.121 2.121 0l4.596 4.596L11.314 0z" />
-        </svg>
+        <a href="#" @click.prevent="$emit('remove-filter',option)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14">
+                <path fill="#FFF" fill-rule="evenodd"
+                d="M11.314 0l2.121 2.121-4.596 4.596 4.596 4.597-2.121 2.121-4.597-4.596-4.596 4.596L0 11.314l4.596-4.597L0 2.121 2.121 0l4.596 4.596L11.314 0z" />
+            </svg>
         </a>
     </li>
     `,
     props: ['option']
 })
+
 
 var app = new Vue({
     el: '#app',
@@ -74,10 +75,26 @@ var app = new Vue({
             this.filter.level = data;
         },
         languagesFilter(data) {
-            this.filter.languages.push(data);
+            if (!this.filter.languages.find(language => language == data)) {
+                this.filter.languages.push(data);
+            }
         },
         toolsFilter(data) {
-            this.filter.tools.push(data);
+            if (!this.filter.tools.find(tool => tool == data)) {
+                this.filter.tools.push(data);
+            }
+        },
+        removeRoleFilter() {
+            this.filter.role = '';
+        },
+        removeLevelFilter() {
+            this.filter.level = '';
+        },
+        removeLanguageFilter(data) {
+            this.filter.languages = this.filter.languages.filter(language => language !== data);
+        },
+        removeToolFilter(data) {
+            this.filter.tools = this.filter.tools.filter(tool => tool !== data);
         },
         clearFilter() {
             this.filter = {
