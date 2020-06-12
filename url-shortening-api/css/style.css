@@ -17,6 +17,7 @@ body {
   line-height: 1.7;
   font-family: "Poppins", sans-serif;
   font-size: 1.8rem;
+  font-weight: 500;
   color: #9e9aa7;
 }
 
@@ -83,6 +84,14 @@ input::placeholder {
 }
 .btn__primary.shorten {
   border-radius: 0.8rem;
+}
+.btn__primary.shorten.disable-btn {
+  background-color: #93e2e2;
+  cursor: wait;
+}
+.btn__primary.shorten.copy:hover {
+  cursor: pointer;
+  background-color: #3b3054;
 }
 .btn__primary:hover {
   background-color: #93e2e2;
@@ -183,7 +192,7 @@ input::placeholder {
   background: url("../images/bg-shorten-desktop.svg"), #3b3054 no-repeat;
 }
 .main .advanced .shorten-box .input-box {
-  flex-basis: 82%;
+  flex: 1 1 auto;
   margin-right: 2rem;
 }
 .main .advanced .shorten-box .input-box input {
@@ -191,11 +200,17 @@ input::placeholder {
 }
 .main .advanced .shorten-box .input-box .error-message {
   padding-top: 0.5rem;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   color: #f46262;
   font-style: italic;
   opacity: 0;
   visibility: hidden;
+}
+.main .advanced .shorten-box .input-box.error-url input {
+  border-color: #f46262;
+}
+.main .advanced .shorten-box .input-box.error-url input::placeholder {
+  color: #f46262;
 }
 .main .advanced .shorten-box .input-box.error input {
   border-color: #f46262;
@@ -208,7 +223,29 @@ input::placeholder {
   visibility: visible;
 }
 .main .advanced .shorten-box .btn.btn__primary {
-  flex: 1;
+  flex: 0 1 18rem;
+}
+.main .advanced .shorten-links {
+  margin-top: 1.8rem;
+}
+.main .advanced .shorten-links li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.4rem;
+  padding: 2rem 3rem;
+  background-color: #ffffff;
+  border-radius: 0.6rem;
+}
+.main .advanced .shorten-links li .enter-link {
+  color: #232127;
+}
+.main .advanced .shorten-links li .generated-link {
+  color: #2acfcf;
+  margin-right: 1.4rem;
+}
+.main .advanced .shorten-links li .btn.btn__primary {
+  padding: 1.2rem 2.8rem;
 }
 .main .advanced .statistics {
   margin: 10rem 0 7rem;
@@ -273,7 +310,7 @@ input::placeholder {
 }
 
 .boost {
-  padding: 4rem 0;
+  padding: 5.8rem 0;
   background: url("../images/bg-boost-desktop.svg"), #3b3054 no-repeat center;
   background-size: cover;
   text-align: center;
@@ -321,6 +358,9 @@ input::placeholder {
 }
 .footer__links > li.social .sub-links li:not(:last-child) {
   margin-right: 2rem;
+}
+.footer__links > li.social .sub-links li a:hover svg path {
+  fill: #2acfcf;
 }
 
 /*# sourceMappingURL=style.css.map */
