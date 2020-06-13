@@ -1,11 +1,19 @@
 const shortenBtn = document.getElementById("shortenBtn"),
     shortenInput = document.getElementById("shortenInput"),
-    shortenLinkBox = document.querySelector(".shorten-links");
+    shortenLinkBox = document.querySelector(".shorten-links"),
+    body = document.querySelector("body"),
+    menuTrigger = document.querySelector('.menu-trigger');
 
 let loading = false;
 let allLinks = []
 
 shortenBtn.addEventListener("click", handleShortenLink);
+
+menuTrigger.addEventListener('click', openMenu);
+
+function openMenu(e) {
+    body.classList.toggle('menu-open');
+}
 
 
 function handleShortenLink(e) {
