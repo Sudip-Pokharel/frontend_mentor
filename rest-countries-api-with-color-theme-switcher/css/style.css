@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  line-height: 1.7;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.4rem;
+  background-color: #202c37;
+  font-weight: 300;
+}
+
+input {
+  background-color: #2b3945;
+  border: none;
+  padding: 1rem 2rem 1rem 8rem;
+  font-size: 1.6rem;
+  font-family: inherit;
+  color: white;
+  border-radius: 0.5rem;
+  height: 5rem;
+  width: 50rem;
+  font-weight: 600;
+}
+input::placeholder {
+  font-weight: 1.4rem;
+  color: #fafafa;
+  font-weight: 600;
+}
+input:focus {
+  outline: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.container {
+  max-width: 144rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.title {
+  font-weight: 800;
+}
+.title__main {
+  font-size: 2.6rem;
+}
+.title__medium {
+  font-size: 2rem;
+}
+
+.header {
+  padding: 1.6rem 0;
+  background-color: #2b3945;
+}
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header .title.title__main {
+  color: white;
+}
+.header #themeChanger {
+  display: none;
+}
+.header label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.header label svg {
+  margin-right: 1rem;
+}
+.header label svg path {
+  fill: white !important;
+}
+
+.main {
+  padding-bottom: 6rem;
+}
+.main .filter {
+  margin: 5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.main .filter .input-box {
+  position: relative;
+}
+.main .filter .input-box svg {
+  position: absolute;
+  top: 50%;
+  left: 3rem;
+  transform: translateY(-50%);
+}
+.main .filter .input-box svg path {
+  stroke: white !important;
+}
+.main .filter .input-box svg line {
+  stroke: white !important;
+}
+.main .filter .select-box {
+  width: 22rem;
+  position: relative;
+}
+.main .filter .select-box span {
+  padding: 1.28rem 2rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fafafa;
+  font-size: 1.6rem;
+  font-weight: 600;
+  background-color: #2b3945;
+}
+.main .filter .select-box span:hover {
+  cursor: pointer;
+}
+.main .filter .select-box span svg polyline {
+  stroke: #fafafa !important;
+}
+.main .filter .select-box span.open + .option-box {
+  display: block;
+}
+.main .filter .select-box .option-box {
+  position: absolute;
+  width: 100%;
+  margin-top: 0.5rem;
+  border-radius: 0.5rem;
+  padding: 1.28rem 2rem;
+  background-color: #2b3945;
+  display: none;
+}
+.main .filter .select-box .option-box li {
+  font-size: 1.6rem;
+  color: #fafafa;
+  font-weight: 600;
+}
+.main .filter .select-box .option-box li:not(:last-child) {
+  margin-bottom: 0.4rem;
+}
+.main .filter .select-box .option-box li:hover {
+  color: white;
+  cursor: context-menu;
+}
+.main .country-list {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+.main .country-list__item {
+  flex: 0 0 30rem;
+  background-color: #2b3945;
+  border-radius: 0.5rem;
+  margin: 0 1.3rem 8rem;
+}
+.main .country-list__item img {
+  width: 100%;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  height: 22rem;
+}
+.main .country-list__item article {
+  padding: 2rem 2rem 4rem 3rem;
+}
+.main .country-list__item .title.title__medium {
+  color: white;
+  margin-bottom: 0.8rem;
+}
+.main .country-list__item p {
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: #fafafa;
+}
+.main .country-list__item p span {
+  font-weight: 600;
+}
+.main .empty-list li {
+  font-size: 1.8rem;
+  color: white;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Frontend Mentor | REST Countries API with color theme switcher</title>
+
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+
+  <div id="app">
+    <header class="header">
+      <header-top />
+    </header>
+    <main class="main">
+      <!-- <div class="container">
+        <div class="filter">
+          <div class="input-box">
+            <svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 512 512'>
+              <title>ionicons-v5-f</title>
+              <path d='M221.09,64A157.09,157.09,0,1,0,378.18,221.09,157.1,157.1,0,0,0,221.09,64Z'
+                style='fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:32px' />
+              <line x1='338.29' y1='338.29' x2='448' y2='448'
+                style='fill:none;stroke:#000;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px' />
+            </svg>
+            <input type="text" placeholder="Search for a country...">
+          </div>
+          <div class="select-box">
+            <span>
+              Filter by Region
+              <svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 512 512'>
+                <title>ionicons-v5-a</title>
+                <polyline points='112 184 256 328 400 184'
+                  style='fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px' />
+              </svg>
+            </span>
+            <ul class="option-box">
+              <li>Africa</li>
+              <li>America</li>
+              <li>Asia</li>
+              <li>Europe</li>
+              <li>Oceania</li>
+            </ul>
+          </div>
+        </div>
+        <ul class="country-list">
+          <li class="country-list__item">
+            <img src="https://restcountries.eu/data/afg.svg" alt="">
+            <article>
+              <h2 class="title title__medium">Afghanistan</h2>
+              <p><span>Population:</span> 27657145</p>
+              <p><span>Region:</span> Asia</p>
+              <p><span>Capital:</span> Kabul</p>
+            </article>
+          </li>
+        </ul>
+      </div> -->
+      <list-country-box />
+
+    </main>
+    <!-- <router-view></router-view> -->
+  </div>
+
+  <script src="./js/lib/vue.js"></script>
+  <script src="./js/lib/es6-promise.auto.js"></script>
+  <script src="./js/lib/vuex.js"></script>
+  <script src="./js/lib/vue-router.js"></script>
+
+  <script src="./js/store.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+
+</html>
