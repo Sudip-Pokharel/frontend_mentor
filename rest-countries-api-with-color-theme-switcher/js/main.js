@@ -1,26 +1,6 @@
 
-// const Home = Vue.component('filter-list', {
-//     template: `
-//     <ul>
-//         <li v-for="country in $store.getters.getAllCountry">
-//             {{country.alpha3Code}}
-//         </li>
-//     </ul>
-//     `,
-//     created() {
-
-//     }
-// })
-
-// const routes = [
-//     { path: '/', name="home", component: Home },
-// ]
-
-// const router = new VueRouter({
-//     routes
-// })
-
 Vue.component('header-top', {
+    name: 'HeaderTop',
     template: `
     <div class="container">
         <h1 class="title title__main">Where in the world?</h1>
@@ -38,8 +18,9 @@ Vue.component('header-top', {
 })
 
 Vue.component('country-item', {
+    name: 'EachCountry',
     template: `
-    <li class="country-list__item">
+    <router-link tag="li" class="country-list__item" :to="'/country/'+country.alpha3Code">
         <img :src="country.flag" :alt="country.name+ ' flag'">
         <article>
             <h2 class="title title__medium">{{country.name}}</h2>
@@ -47,12 +28,32 @@ Vue.component('country-item', {
             <p><span>Region:</span> {{country.region}}</p>
             <p><span>Capital:</span> {{country.capital}}</p>
         </article>
-    </li>
+    </router-link>
     `,
     props: ['country']
 })
 
-Vue.component('list-country-box', {
+const Details = Vue.component('view-details', {
+    name: 'DetailView',
+    template: "<div>view details</div>",
+    data() {
+        return {
+            data: {}
+        }
+    },
+    created() {
+        let foundCountry = this.$store.getters.getAllCountry.find(country => country.alpha3Code == this.$route.params.alpha)
+        if (foundCountry) {
+            this.data = foundCountry
+        }
+        else {
+            this.$router.push({ name: 'home' })
+        }
+    }
+})
+
+const Home = Vue.component('list-country-box', {
+    name: 'ListCountry',
     template:
         `
         <div class="container">
@@ -125,11 +126,20 @@ Vue.component('list-country-box', {
     }
 })
 
+const routes = [
+    { path: '/', name: 'home', component: Home },
+    { path: '/country/:alpha', component: Details }
+]
+
+const router = new VueRouter({
+    routes
+})
 
 var app = new Vue({
+    name: "Main",
     el: '#app',
     store,
-    // router,
+    router,
     created() {
         this.$store.dispatch('fetchAllCountry');
     }

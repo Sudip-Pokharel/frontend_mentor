@@ -18,52 +18,20 @@
       <header-top />
     </header>
     <main class="main">
-      <!-- <div class="container">
-        <div class="filter">
-          <div class="input-box">
-            <svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 512 512'>
-              <title>ionicons-v5-f</title>
-              <path d='M221.09,64A157.09,157.09,0,1,0,378.18,221.09,157.1,157.1,0,0,0,221.09,64Z'
-                style='fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:32px' />
-              <line x1='338.29' y1='338.29' x2='448' y2='448'
-                style='fill:none;stroke:#000;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px' />
+      <div class="details">
+        <div class="container">
+          <a href="#" @click="$router.go(-1)" class="btn btn__primary">
+            <svg id="Layer" enable-background="new 0 0 64 64" height="24" viewBox="0 0 64 64" width="33"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="m54 30h-39.899l15.278-14.552c.8-.762.831-2.028.069-2.828-.761-.799-2.027-.831-2.828-.069l-17.448 16.62c-.755.756-1.172 1.76-1.172 2.829 0 1.068.417 2.073 1.207 2.862l17.414 16.586c.387.369.883.552 1.379.552.528 0 1.056-.208 1.449-.621.762-.8.731-2.065-.069-2.827l-15.342-14.552h39.962c1.104 0 2-.896 2-2s-.896-2-2-2z" />
             </svg>
-            <input type="text" placeholder="Search for a country...">
-          </div>
-          <div class="select-box">
-            <span>
-              Filter by Region
-              <svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 512 512'>
-                <title>ionicons-v5-a</title>
-                <polyline points='112 184 256 328 400 184'
-                  style='fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px' />
-              </svg>
-            </span>
-            <ul class="option-box">
-              <li>Africa</li>
-              <li>America</li>
-              <li>Asia</li>
-              <li>Europe</li>
-              <li>Oceania</li>
-            </ul>
-          </div>
+            Back
+          </a>
         </div>
-        <ul class="country-list">
-          <li class="country-list__item">
-            <img src="https://restcountries.eu/data/afg.svg" alt="">
-            <article>
-              <h2 class="title title__medium">Afghanistan</h2>
-              <p><span>Population:</span> 27657145</p>
-              <p><span>Region:</span> Asia</p>
-              <p><span>Capital:</span> Kabul</p>
-            </article>
-          </li>
-        </ul>
-      </div> -->
-      <list-country-box />
-
+      </div>
+      <!-- <router-view></router-view> -->
     </main>
-    <!-- <router-view></router-view> -->
   </div>
 
   <script src="./js/lib/vue.js"></script>
