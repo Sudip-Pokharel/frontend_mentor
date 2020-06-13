@@ -1,6 +1,3 @@
-Vue.component('filter-item', {
-    template: '<li>This is a filter item</li>'
-})
 
 Vue.component('list-item', {
     template: `
@@ -105,7 +102,7 @@ var app = new Vue({
             }
         },
         getJobData() {
-            fetch('../data.json')
+            fetch('./data.json')
                 .then(res => res.json())
                 .then(data => {
                     this.jobs = data;
