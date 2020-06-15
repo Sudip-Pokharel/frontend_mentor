@@ -36,7 +36,7 @@ Vue.component('country-item', {
 const Details = Vue.component('view-details', {
     name: 'DetailView',
     template: `
-    <div class="details">
+    <div class="details" v-if="Object.keys(data).length">
         <div class="container">
             <a href="#" @click="$router.go(-1)" class="btn btn__primary back">
                 <svg id="Layer" enable-background="new 0 0 64 64" height="24" viewBox="0 0 64 64" width="33"
@@ -67,10 +67,10 @@ const Details = Vue.component('view-details', {
                     <p>Languages <span>{{getLanguages()}}</span> </p>
                     </div>
                 </div>
-                <div class="border">
+                <div class="border" v-if="data.borders.length">
                     <p> Border Countries: </p>
                     <div class="btn-box">
-                    <router-link class="btn btn__primary" @click="unique_key+=1"  v-for="(border,index) in data.borders" :key="'border__country'+index" :to="{name:'detail_view',params:{alpha:border}}">{{border}}</router-link>
+                    <router-link class="btn btn__primary"  v-for="(border,index) in data.borders" :key="'border__country'+index" :to="{name:'detail_view',params:{alpha:border}}">{{getBorderName(border)}}</router-link>
                     </div>
                 </div>
                 </div>
@@ -84,24 +84,36 @@ const Details = Vue.component('view-details', {
             unique_key: 0
         }
     },
+    watch: {
+        '$route.params.alpha'() {
+            this.getData();
+        }
+    },
     methods: {
+        getBorderName(border) {
+            return this.$store.getters.getAllCountry.find(country => country.alpha3Code == border).name;
+        },
         getTopLevelDomain() {
+            return this.data.topLevelDomain.map(domain => domain).join(", ");
         },
         getCurrencies() {
-
+            return this.data.currencies.map(currency => currency.name).join(", ");
         },
         getLanguages() {
-
+            return this.data.languages.map(language => language.name).join(', ');
+        },
+        getData() {
+            let foundCountry = this.$store.getters.getAllCountry.find(country => country.alpha3Code == this.$route.params.alpha)
+            if (foundCountry) {
+                this.data = foundCountry
+            }
+            else {
+                this.$router.push({ name: 'home' })
+            }
         }
     },
     created() {
-        let foundCountry = this.$store.getters.getAllCountry.find(country => country.alpha3Code == this.$route.params.alpha)
-        if (foundCountry) {
-            this.data = foundCountry
-        }
-        else {
-            this.$router.push({ name: 'home' })
-        }
+        this.getData();
     }
 })
 

@@ -20,23 +20,26 @@ body {
   background-color: #202c37;
   font-weight: 300;
 }
+body.light-mode {
+  background-color: #fafafa;
+}
 
 input {
   background-color: #2b3945;
+  color: white;
   border: none;
   padding: 1rem 2rem 1rem 8rem;
   font-size: 1.6rem;
   font-family: inherit;
-  color: white;
   border-radius: 0.5rem;
   height: 5rem;
   width: 50rem;
-  font-weight: 600;
+  font-weight: 300;
 }
 input::placeholder {
   font-weight: 1.4rem;
   color: #fafafa;
-  font-weight: 600;
+  font-weight: 300;
 }
 input:focus {
   outline: none;
@@ -77,7 +80,12 @@ ul {
 .container {
   max-width: 144rem;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 4rem;
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 0 2rem;
+  }
 }
 
 .title {
@@ -86,8 +94,92 @@ ul {
 .title__main {
   font-size: 2.6rem;
 }
+@media (max-width: 768px) {
+  .title__main {
+    font-size: 1.9rem;
+  }
+}
 .title__medium {
   font-size: 2rem;
+}
+@media (max-width: 768px) {
+  .title__medium {
+    font-size: 1.8rem;
+  }
+}
+
+body.light-mode .header {
+  background-color: white;
+}
+body.light-mode .header .title.title__main {
+  color: #111517;
+}
+body.light-mode .header label {
+  color: #111517;
+}
+body.light-mode .main .filter .input-box input {
+  background-color: white;
+  color: #858585;
+}
+body.light-mode .main .filter .input-box input::placeholder {
+  color: #858585;
+}
+body.light-mode .main .filter .input-box svg path {
+  stroke: #111517 !important;
+}
+body.light-mode .main .filter .input-box svg line {
+  stroke: #111517 !important;
+}
+body.light-mode .main .select-box {
+  width: 22rem;
+  position: relative;
+}
+body.light-mode .main .select-box span {
+  background-color: white;
+  color: #111517;
+  font-weight: 600;
+}
+body.light-mode .main .select-box span svg polyline {
+  stroke: #111517 !important;
+}
+body.light-mode .main .select-box .option-box {
+  background-color: white;
+}
+body.light-mode .main .select-box .option-box li {
+  color: #111517;
+  font-weight: 600;
+}
+body.light-mode .main .select-box .option-box li:hover {
+  color: #111517;
+}
+body.light-mode .main .country-list__item {
+  background-color: white;
+}
+body.light-mode .main .country-list__item .title.title__medium {
+  color: #111517;
+}
+body.light-mode .main .country-list__item p {
+  color: #111517;
+}
+body.light-mode .main .empty-list li {
+  font-size: 1.8rem;
+  color: #111517;
+}
+body.light-mode .main .details .btn.btn__primary {
+  background-color: white;
+  color: #111517;
+}
+body.light-mode .main .details .btn.btn__primary.back svg path {
+  fill: #111517 !important;
+}
+body.light-mode .main .details__country .description .title.title__medium {
+  color: #111517;
+}
+body.light-mode .main .details__country .description .content p {
+  color: #111517;
+}
+body.light-mode .main .details__country .description .border p {
+  color: #111517;
 }
 
 .header {
@@ -110,7 +202,7 @@ ul {
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 600;
 }
 .header label svg {
@@ -129,8 +221,22 @@ ul {
   justify-content: space-between;
   align-items: flex-start;
 }
+@media (max-width: 768px) {
+  .main .filter {
+    flex-direction: column;
+  }
+}
 .main .filter .input-box {
   position: relative;
+}
+@media (max-width: 768px) {
+  .main .filter .input-box {
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+  .main .filter .input-box input {
+    max-width: 100%;
+  }
 }
 .main .filter .input-box svg {
   position: absolute;
@@ -156,7 +262,7 @@ ul {
   justify-content: space-between;
   color: #fafafa;
   font-size: 1.6rem;
-  font-weight: 600;
+  font-weight: 300;
   background-color: #2b3945;
 }
 .main .filter .select-box span:hover {
@@ -180,7 +286,7 @@ ul {
 .main .filter .select-box .option-box li {
   font-size: 1.6rem;
   color: #fafafa;
-  font-weight: 600;
+  font-weight: 300;
 }
 .main .filter .select-box .option-box li:not(:last-child) {
   margin-bottom: 0.4rem;
@@ -190,16 +296,30 @@ ul {
   cursor: context-menu;
 }
 .main .country-list {
-  display: flex;
-  align-items: stretch;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(27.2rem, 1fr));
+  grid-gap: 6rem;
+}
+@media (max-width: 768px) {
+  .main .country-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 }
 .main .country-list__item {
-  flex: 0 0 30rem;
   background-color: #2b3945;
   border-radius: 0.5rem;
-  margin: 0 1.3rem 8rem;
   transition: 0.2s ease-in-out;
+}
+@media (max-width: 768px) {
+  .main .country-list__item {
+    max-width: 30rem;
+  }
+  .main .country-list__item:not(:last-child) {
+    margin-bottom: 6rem;
+  }
 }
 .main .country-list__item:hover {
   cursor: pointer;
@@ -209,10 +329,10 @@ ul {
   width: 100%;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
-  height: 22rem;
+  height: 18rem;
 }
 .main .country-list__item article {
-  padding: 2rem 2rem 4rem 3rem;
+  padding: 2rem 1rem 4rem 2rem;
 }
 .main .country-list__item .title.title__medium {
   color: white;
@@ -239,14 +359,32 @@ ul {
   justify-content: space-between;
   align-items: center;
 }
+@media (max-width: 768px) {
+  .main .details__country {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
 .main .details__country .image {
   flex: 0 1 44%;
 }
+@media (max-width: 768px) {
+  .main .details__country .image {
+    flex: 0 1 auto;
+    margin-bottom: 3rem;
+  }
+}
 .main .details__country .image img {
   width: 100%;
+  max-height: 40rem;
 }
 .main .details__country .description {
   flex: 0 1 46%;
+}
+@media (max-width: 768px) {
+  .main .details__country .description {
+    flex-basis: auto;
+  }
 }
 .main .details__country .description .title.title__medium {
   font-size: 3.2rem;
@@ -258,6 +396,23 @@ ul {
   align-items: flex-start;
   justify-content: space-between;
   margin-bottom: 7rem;
+}
+@media (max-width: 768px) {
+  .main .details__country .description .content {
+    flex-direction: column;
+    margin-bottom: 3rem;
+  }
+}
+.main .details__country .description .content > div {
+  max-width: 50%;
+}
+@media (max-width: 768px) {
+  .main .details__country .description .content > div {
+    max-width: 100%;
+  }
+  .main .details__country .description .content > div:first-child {
+    margin-bottom: 4rem;
+  }
 }
 .main .details__country .description .content p {
   font-size: 1.6rem;
@@ -272,11 +427,31 @@ ul {
   display: flex;
   align-items: center;
 }
+@media (max-width: 768px) {
+  .main .details__country .description .border {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
 .main .details__country .description .border p {
+  flex: 0 0 14rem;
   font-size: 1.6rem;
   color: white;
   font-weight: 600;
   margin-right: 1.4rem;
+}
+@media (max-width: 768px) {
+  .main .details__country .description .border p {
+    flex-basis: auto;
+    margin-bottom: 2rem;
+  }
+}
+.main .details__country .description .border .btn-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+.main .details__country .description .border .btn-box a {
+  margin-bottom: 0.8rem;
 }
 .main .details__country .description .border .btn-box a:not(:last-child) {
   margin-right: 0.8rem;
