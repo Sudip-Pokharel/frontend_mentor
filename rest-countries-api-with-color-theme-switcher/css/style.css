@@ -110,6 +110,7 @@ ul {
 
 body.light-mode .header {
   background-color: white;
+  box-shadow: 0 0.2rem 1.2rem 0.5rem rgba(17, 21, 23, 0.04);
 }
 body.light-mode .header .title.title__main {
   color: #111517;
@@ -120,6 +121,7 @@ body.light-mode .header label {
 body.light-mode .main .filter .input-box input {
   background-color: white;
   color: #858585;
+  box-shadow: 0 0.2rem 1.2rem 0.5rem rgba(17, 21, 23, 0.04);
 }
 body.light-mode .main .filter .input-box input::placeholder {
   color: #858585;
@@ -133,6 +135,7 @@ body.light-mode .main .filter .input-box svg line {
 body.light-mode .main .select-box {
   width: 22rem;
   position: relative;
+  box-shadow: 0 0.2rem 1.2rem 0.5rem rgba(17, 21, 23, 0.04);
 }
 body.light-mode .main .select-box span {
   background-color: white;
@@ -144,6 +147,7 @@ body.light-mode .main .select-box span svg polyline {
 }
 body.light-mode .main .select-box .option-box {
   background-color: white;
+  box-shadow: 0 0.2rem 1.2rem 0.5rem rgba(17, 21, 23, 0.04);
 }
 body.light-mode .main .select-box .option-box li {
   color: #111517;
@@ -154,6 +158,10 @@ body.light-mode .main .select-box .option-box li:hover {
 }
 body.light-mode .main .country-list__item {
   background-color: white;
+  box-shadow: 0 0.2rem 1.2rem 0.5rem rgba(17, 21, 23, 0.04);
+}
+body.light-mode .main .country-list__item:hover {
+  box-shadow: 0 0.2rem 1.2rem 0.5rem rgba(17, 21, 23, 0.09);
 }
 body.light-mode .main .country-list__item .title.title__medium {
   color: #111517;
@@ -168,6 +176,10 @@ body.light-mode .main .empty-list li {
 body.light-mode .main .details .btn.btn__primary {
   background-color: white;
   color: #111517;
+  box-shadow: 0 0.2rem 1.2rem 0.5rem rgba(17, 21, 23, 0.08);
+}
+body.light-mode .main .details .btn.btn__primary:hover {
+  box-shadow: 0 0.2rem 1.2rem 0.5rem rgba(17, 21, 23, 0.1);
 }
 body.light-mode .main .details .btn.btn__primary.back svg path {
   fill: #111517 !important;
@@ -180,6 +192,12 @@ body.light-mode .main .details__country .description .content p {
 }
 body.light-mode .main .details__country .description .border p {
   color: #111517;
+}
+body.light-mode .main .details__country .description .border .btn-box a {
+  box-shadow: 0 0.2rem 1.2rem 0.5rem rgba(17, 21, 23, 0.06);
+}
+body.light-mode .main .details__country .description .border .btn-box a:hover {
+  box-shadow: 0 0.2rem 1.2rem 0.5rem rgba(17, 21, 23, 0.1);
 }
 
 .header {
@@ -204,6 +222,9 @@ body.light-mode .main .details__country .description .border p {
   color: white;
   font-size: 1.6rem;
   font-weight: 600;
+}
+.header label:hover {
+  cursor: pointer;
 }
 .header label svg {
   margin-right: 1rem;
@@ -235,6 +256,7 @@ body.light-mode .main .details__country .description .border p {
     width: 100%;
   }
   .main .filter .input-box input {
+    box-shadow: 0 0.2rem 1.2rem 0.5rem rgba(17, 21, 23, 0.2);
     max-width: 100%;
   }
 }
@@ -253,6 +275,7 @@ body.light-mode .main .details__country .description .border p {
 .main .filter .select-box {
   width: 22rem;
   position: relative;
+  box-shadow: 0 0.2rem 1.2rem 0.5rem rgba(17, 21, 23, 0.2);
 }
 .main .filter .select-box span {
   padding: 1.28rem 2rem;
@@ -282,6 +305,7 @@ body.light-mode .main .details__country .description .border p {
   padding: 1.28rem 2rem;
   background-color: #2b3945;
   display: none;
+  box-shadow: 0 0.2rem 1.2rem 0.5rem rgba(17, 21, 23, 0.2);
 }
 .main .filter .select-box .option-box li {
   font-size: 1.6rem;
@@ -312,6 +336,7 @@ body.light-mode .main .details__country .description .border p {
   background-color: #2b3945;
   border-radius: 0.5rem;
   transition: 0.2s ease-in-out;
+  max-width: 27.2rem;
 }
 @media (max-width: 768px) {
   .main .country-list__item {

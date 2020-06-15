@@ -4,7 +4,7 @@ Vue.component('header-top', {
     template: `
     <div class="container">
         <h1 class="title title__main">Where in the world?</h1>
-        <input type="checkbox" id="themeChanger">
+        <input type="checkbox" id="themeChanger" @change="changeTheme($event)">
         <label for="themeChanger">
             <svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 512 512'>
             <title>ionicons-v5-j</title>
@@ -15,6 +15,11 @@ Vue.component('header-top', {
             Dark Mode
         </label>
     </div>`,
+    methods: {
+        changeTheme($event) {
+            $event.target.checked ? document.querySelector("body").classList.add('light-mode') : document.querySelector("body").classList.remove('light-mode')
+        }
+    }
 })
 
 Vue.component('country-item', {
