@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+
+  <div class="container">
+    <header class="header">
+      <h1 class="title title__main">
+        <span>ROCK</span>
+        <span>PAPER</span>
+        <span>SCISSORS</span>
+      </h1>
+      <div class="score-box">
+        SCORE
+        <span>
+          12
+        </span>
+      </div>
+    </header>
+    <main class="main">
+      <div class="start-view">
+        <div class="paper">
+          <img src="./images/icon-paper.svg" alt="" class="paper">
+        </div>
+        <img src="./images/icon-scissors.svg" alt="" class="scissors">
+        <img src="./images/icon-rock.svg" alt="" class="rock">
+      </div>
+    </main>
+    <footer class="footer">
+      <a href="#" class="btn btn__outline" id="modal-trigger">RULES</a>
+    </footer>
+  </div>
+
+  <div class="modal modal-rules">
+    <div class="modal__header">
+      <h2 class="title title__medium">RULES</h2>
+      <a href="" id="close-modal">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+          <path fill="#3B4262" fill-rule="evenodd"
+            d="M16.97 0l2.122 2.121-7.425 7.425 7.425 7.425-2.121 2.12-7.425-7.424-7.425 7.425L0 16.97l7.425-7.425L0 2.121 2.121 0l7.425 7.425L16.971 0z"
+            opacity=".25" />
+        </svg>
+      </a>
+    </div>
+    <div class="modal__image">
+      <img src="./images/image-rules.svg" alt="">
+    </div>
+  </div>
+
+  <script src="./js/main.js"></script>
+
+</body>
+
+</html>
