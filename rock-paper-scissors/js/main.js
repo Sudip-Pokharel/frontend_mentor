@@ -25,18 +25,15 @@ function closeModal(e) {
 
 function changeGameType() {
     if (bonusTriggerInput.checked) {
-        console.log(2)
-        state.score = scoreBonus.data;
+        state.score = JSON.parse(localStorage.getItem("ROCK_PAPER_SCISSORS_LIZARD_SPOCK_SCORE")) ? JSON.parse(localStorage.getItem("ROCK_PAPER_SCISSORS_LIZARD_SPOCK_SCORE")).data : 0;;
         state.bonus = true;
         localStorage.setItem("GAME_PLAY_TYPE", JSON.stringify({ type: 1 }));
     }
     else {
-        console.log(3)
-        state.score = scoreOrginal.data;
+        state.score = JSON.parse(localStorage.getItem("ROCK_PAPER_SCISSORS_SCORE")) ? JSON.parse(localStorage.getItem("ROCK_PAPER_SCISSORS_SCORE")).data : 0;
         state.bonus = false;
         localStorage.setItem("GAME_PLAY_TYPE", JSON.stringify({ type: 0 }));
     }
-    console.log(123)
     controller.init();
 }
 
