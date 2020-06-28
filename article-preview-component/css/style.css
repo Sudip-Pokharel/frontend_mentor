@@ -34,7 +34,7 @@ body {
 .title {
   font-weight: 700;
   color: #48556a;
-  line-height: 1.1;
+  line-height: 1.5;
 }
 .title__medium {
   font-size: 1.9rem;
@@ -65,7 +65,7 @@ body {
 }
 .article__image {
   width: 28rem;
-  height: 24.5rem;
+  height: 26.7rem;
   border-top-left-radius: 0.8rem;
   border-bottom-left-radius: 0.8rem;
 }
