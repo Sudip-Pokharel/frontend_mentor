@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+ul {
+  list-style-type: none;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  line-height: 1.6;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #67727e;
+  font-family: "Rubik", sans-serif;
+  background-color: #f5f6fa;
+}
+
+.md-mar-bt {
+  margin-bottom: 2rem;
+}
+
+.main {
+  margin-inline: auto;
+  margin-block: 3.2rem;
+  padding-inline: 2rem;
+  max-width: 74rem;
+}
+
+.button {
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
+  background-color: transparent;
+  transition: all 0.2s ease-in-out;
+}
+.button--primary {
+  min-width: 9rem;
+  font-weight: 500;
+  font-size: 1.6rem;
+  text-align: center;
+  padding: 1.2rem 0;
+  color: white;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  background-color: #5457b6;
+}
+.button--reply, .button--edit, .button--delete {
+  font-weight: 500;
+  font-size: 1.6rem;
+  padding-left: 2rem;
+  background-position: left;
+  text-transform: capitalize;
+  background-repeat: no-repeat;
+}
+.button--reply {
+  color: #5457b6;
+  background-image: url("../images/icon-reply.svg");
+}
+.button--edit {
+  color: #5457b6;
+  background-image: url("../images/icon-edit.svg");
+}
+.button--delete {
+  color: #ed6468;
+  background-image: url("../images/icon-delete.svg");
+}
+.button--disabled {
+  opacity: 0.5;
+}
+.button--disabled:hover {
+  cursor: not-allowed;
+}
+.button:hover {
+  opacity: 0.5;
+}
+
+.textarea {
+  resize: none;
+  outline: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
+  min-height: 10rem;
+  padding: 1rem 2rem;
+  border-radius: 0.8rem;
+  border: 0.2rem solid #eaecf1;
+  font-weight: 400;
+  caret-color: #324152;
+  color: #324152;
+  transition: all 0.2s ease-in-out;
+}
+.textarea:focus {
+  border-color: #5457b6;
+}
+
+.score, .comment__score {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.4rem;
+  min-width: 4rem;
+  max-width: 4rem;
+  border-radius: 1.2rem;
+  background-color: #f5f6fa;
+}
+.score__plus, .score__minus {
+  cursor: pointer;
+}
+.score__plus path, .score__minus path {
+  transition: all 0.2s ease-in-out;
+}
+.score__plus:hover path, .score__minus:hover path {
+  fill: #5457b6;
+}
+.score__point {
+  font-weight: 700;
+  color: #5457b6;
+  margin-block: 1.8rem;
+}
+
+.comment {
+  display: flex;
+  align-items: flex-start;
+  padding: 2.4rem;
+  margin-bottom: 0.6rem;
+  border-radius: 0.9rem;
+  background-color: white;
+  animation: slide-up 0.4s linear;
+}
+.comment--reply {
+  animation: slide-down-right 0.5s linear;
+}
+.comment__main {
+  flex: 1;
+  margin-left: 2.4rem;
+}
+.comment__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.8rem;
+}
+.comment__info {
+  display: flex;
+  align-items: center;
+}
+.comment__user-image {
+  width: 3.2rem;
+}
+.comment__user-name {
+  margin-inline: 1.6rem;
+  font-weight: 700;
+  color: #324152;
+}
+.comment__self {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #f5f6fa;
+  margin-left: -0.3rem;
+  margin-right: 1.3rem;
+  border-radius: 0.3rem;
+  padding: 0.1rem 0.7rem;
+  background-color: #5457b6;
+}
+.comment__action .button:not(:last-child) {
+  margin-right: 2.4rem;
+}
+.comment__replies-list {
+  margin-left: 4rem;
+  padding-left: 4.2rem;
+  border-left: 1px solid #c3c4ef;
+}
+.comment__replying-to {
+  font-weight: 700;
+  color: #5457b6;
+}
+
+.comment-add {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 2.4rem;
+  border-radius: 0.9rem;
+  background-color: white;
+  animation: slide-down 0.1s linear;
+}
+.comment-add__user-image {
+  width: 4.2rem;
+}
+.comment-add__textarea {
+  flex-grow: 1;
+  margin-inline: 2rem;
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slide-down-right {
+  0% {
+    opacity: 0;
+    transform: translate(-5rem, -2rem);
+  }
+  50% {
+    opacity: 0.3;
+    transform: translate(-5rem, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
