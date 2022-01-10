@@ -34,7 +34,7 @@ body {
   margin-inline: auto;
   margin-block: 3.2rem;
   padding-inline: 2rem;
-  max-width: 74rem;
+  max-width: 77rem;
 }
 
 .button {
@@ -93,11 +93,12 @@ body {
   cursor: pointer;
   font-size: inherit;
   font-family: inherit;
-  min-height: 10rem;
+  min-height: 11rem;
   padding: 1rem 2rem;
   border-radius: 0.8rem;
   border: 0.2rem solid #eaecf1;
   font-weight: 400;
+  line-height: 1.7;
   caret-color: #324152;
   color: #324152;
   transition: all 0.2s ease-in-out;
@@ -198,6 +199,17 @@ body {
   border-radius: 0.9rem;
   background-color: white;
   animation: slide-down 0.1s linear;
+}
+.comment-add--edit {
+  padding: 0;
+}
+.comment-add--edit .comment-add__textarea {
+  flex-basis: 100%;
+  margin-inline: 0;
+  margin-bottom: 1.6rem;
+}
+.comment-add--edit .button {
+  margin-left: auto;
 }
 .comment-add__user-image {
   width: 4.2rem;

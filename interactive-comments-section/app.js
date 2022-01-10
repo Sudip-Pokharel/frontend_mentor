@@ -77,18 +77,18 @@ const Main = () => {
     JSON.parse(localStorage.getItem('INTERACTIVE_COMMENT_DATA')) || datas
   );
   const months = [
-    'January',
-    'February',
-    'March',
-    'April',
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
     'May',
     'June',
     'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
   ];
   const currentUser = data.currentUser;
 
@@ -136,8 +136,6 @@ const Main = () => {
     targetComment.replies = tempTargetCommentReplies;
     tempComment[commentIndex] = targetComment;
     setData({ ...data, comments: tempComment });
-    if (payload.isComment) {
-    }
   };
 
   const updateCommentScore = (payload) => {
@@ -166,6 +164,32 @@ const Main = () => {
     }
   };
 
+  const updateCommentContent = (payload) => {
+    if (!payload.commentContent) return;
+    const tempComment = [...data.comments];
+    const commentId = payload.isComment ? payload.id : payload.commentId;
+    const commentIndex = getCommentIndex(commentId);
+    const targetComment = {
+      ...tempComment.find((each) => each.id === commentId),
+    };
+    if (!payload.isComment) {
+      const tempTargetCommentReplies = [...targetComment.replies];
+      const replyIndex = getReplyIndex(commentIndex, payload.id);
+      const targetReply = {
+        ...targetComment.replies.find((each) => each.id === payload.id),
+      };
+      targetReply.content = payload.commentContent;
+      tempTargetCommentReplies[replyIndex] = targetReply;
+      targetComment.replies = tempTargetCommentReplies;
+      tempComment[commentIndex] = targetComment;
+      setData({ ...data, comments: tempComment });
+    } else {
+      targetComment.content = payload.commentContent;
+      tempComment[commentIndex] = targetComment;
+      setData({ ...data, comments: tempComment });
+    }
+  };
+
   const getCommentIndex = (id) => {
     return data.comments.findIndex((each) => each.id === id);
   };
@@ -187,10 +211,9 @@ const Main = () => {
           addNewComment(payload);
         } else if (payload.action === 'reply') {
           addReplyToComment(payload);
+        } else if (payload.action === 'update') {
+          updateCommentContent(payload);
         }
-        break;
-      case 'reply':
-        console.log('reply', payload);
         break;
       default:
         return;
@@ -395,15 +418,7 @@ const Comment = ({
                     type="button"
                     value="edit"
                     className="button button--edit"
-                    onClick={() =>
-                      handleCommentAction({
-                        id,
-                        isComment,
-                        commentId,
-                        type: 'comment',
-                        action: 'edit',
-                      })
-                    }
+                    onClick={() => setShowCommentBox(!showCommentBox)}
                   />
                 </>
               ) : (
@@ -416,17 +431,38 @@ const Comment = ({
               )}
             </div>
           </div>
-          <p className="comment__content">
-            {replyingTo ? (
-              <span className="comment__replying-to">@{replyingTo}&nbsp;</span>
+          <div className="comment__content">
+            {!showCommentBox ? (
+              <p>
+                {replyingTo ? (
+                  <span className="comment__replying-to">
+                    @{replyingTo}&nbsp;
+                  </span>
+                ) : (
+                  ''
+                )}
+                {content}
+              </p>
             ) : (
               ''
             )}
-            {content}
-          </p>
+            {showCommentBox && currentUser.username === user.username ? (
+              <AddComment
+                id={id}
+                commentId={commentId}
+                isComment={isComment}
+                editContent={content}
+                currentUser={currentUser}
+                setShowCommentBox={setShowCommentBox}
+                onHandleCommentAction={handleCommentAction}
+              />
+            ) : (
+              ''
+            )}
+          </div>
         </div>
       </article>
-      {showCommentBox ? (
+      {showCommentBox && currentUser.username !== user.username ? (
         <AddComment
           id={id}
           commentId={commentId}
@@ -434,6 +470,7 @@ const Comment = ({
           currentUser={currentUser}
           setShowCommentBox={setShowCommentBox}
           onHandleCommentAction={handleCommentAction}
+          editContent={currentUser.username === user.username ? content : ''}
         />
       ) : (
         ''
@@ -448,13 +485,16 @@ const AddComment = ({
   commentId,
   isComment,
   currentUser,
+  editContent,
   setShowCommentBox,
   onHandleCommentAction,
 }) => {
-  const [commentContent, setCommentContent] = React.useState('');
+  const [commentContent, setCommentContent] = React.useState(editContent || '');
   return (
-    <div className="comment-add">
-      <img src={currentUser.image.png} className="comment-add__user-image" />
+    <div className={`comment-add${editContent ? ' comment-add--edit' : ''}`}>
+      {!editContent && (
+        <img src={currentUser.image.png} className="comment-add__user-image" />
+      )}
       <textarea
         value={commentContent}
         placeholder="Add a comment..."
@@ -464,16 +504,16 @@ const AddComment = ({
       <input
         type="button"
         className="button button--primary"
-        value="send"
+        value={editContent ? 'update' : 'send'}
         disabled={!commentContent}
         onClick={() => {
           onHandleCommentAction({
             id,
             commentId,
             isComment,
-            action: id ? 'reply' : 'add',
             commentContent,
             type: 'comment',
+            action: editContent ? 'update' : id ? 'reply' : 'add',
           });
           setCommentContent('');
           if (setShowCommentBox) {
