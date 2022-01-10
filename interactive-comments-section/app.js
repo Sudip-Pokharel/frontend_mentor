@@ -432,7 +432,9 @@ const Comment = ({
             </div>
           </div>
           <div className="comment__content">
-            {!showCommentBox ? (
+            {showCommentBox && currentUser.username === user.username ? (
+              ''
+            ) : (
               <p>
                 {replyingTo ? (
                   <span className="comment__replying-to">
@@ -443,8 +445,6 @@ const Comment = ({
                 )}
                 {content}
               </p>
-            ) : (
-              ''
             )}
             {showCommentBox && currentUser.username === user.username ? (
               <AddComment
