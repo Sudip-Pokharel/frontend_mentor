@@ -25,6 +25,16 @@ body {
   font-family: "Rubik", sans-serif;
   background-color: #f5f6fa;
 }
+body.modal--show {
+  overflow: hidden;
+}
+body.modal--show::before {
+  content: "";
+  inset: 0;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9;
+}
 
 .md-mar-bt {
   margin-bottom: 2rem;
@@ -32,7 +42,7 @@ body {
 
 .main {
   margin-inline: auto;
-  margin-block: 3.2rem;
+  padding-block: 3.2rem;
   padding-inline: 2rem;
   max-width: 77rem;
 }
@@ -47,14 +57,41 @@ body {
 }
 .button--primary {
   min-width: 9rem;
+  max-width: 15rem;
   font-weight: 500;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
+  padding: 1rem 0;
   text-align: center;
-  padding: 1.2rem 0;
   color: white;
   border-radius: 0.5rem;
   text-transform: uppercase;
   background-color: #5457b6;
+}
+.button--secondary {
+  min-width: 9rem;
+  max-width: 15rem;
+  font-weight: 500;
+  font-size: 1.5rem;
+  padding: 1rem 0;
+  text-align: center;
+  color: white;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  min-width: 15rem;
+  background-color: #67727e;
+}
+.button--danger {
+  min-width: 9rem;
+  max-width: 15rem;
+  font-weight: 500;
+  font-size: 1.5rem;
+  padding: 1rem 0;
+  text-align: center;
+  color: white;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  min-width: 15rem;
+  background-color: #ed6468;
 }
 .button--reply, .button--edit, .button--delete {
   font-weight: 500;
@@ -86,6 +123,12 @@ body {
   opacity: 0.5;
 }
 
+.title--heading {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #324152;
+}
+
 .textarea {
   resize: none;
   outline: none;
@@ -105,6 +148,29 @@ body {
 }
 .textarea:focus {
   border-color: #5457b6;
+}
+
+.modal {
+  top: 50%;
+  left: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  padding: 2rem;
+  max-width: 35rem;
+  border-radius: 0.5rem;
+  background-color: white;
+}
+.modal__header {
+  margin-bottom: 1.4rem;
+}
+.modal__body {
+  margin-bottom: 1.4rem;
+}
+.modal__footer {
+  gap: 1rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .score, .comment__score {

@@ -76,6 +76,15 @@ const Main = () => {
   const [data, setData] = React.useState(
     JSON.parse(localStorage.getItem('INTERACTIVE_COMMENT_DATA')) || datas
   );
+  const [modalData, setModalData] = React.useState({});
+
+  React.useEffect(() => {
+    if (Object.keys(modalData).length) {
+      document.body.classList.add('modal--show');
+    } else {
+      document.body.classList.remove('modal--show');
+    }
+  }, [modalData]);
   const months = [
     'Jan',
     'Feb',
@@ -190,6 +199,27 @@ const Main = () => {
     }
   };
 
+  const deleteComment = (payload) => {
+    const tempComment = [...data.comments];
+    const commentId = payload.isComment ? payload.id : payload.commentId;
+    const commentIndex = getCommentIndex(commentId);
+    const targetComment = {
+      ...tempComment.find((each) => each.id === commentId),
+    };
+
+    if (!payload.isComment) {
+      const tempTargetCommentReplies = [...targetComment.replies];
+      const replyIndex = getReplyIndex(commentIndex, payload.id);
+      tempTargetCommentReplies.splice(replyIndex, 1);
+      targetComment.replies = tempTargetCommentReplies;
+      tempComment[commentIndex] = targetComment;
+      setData({ ...data, comments: tempComment });
+    } else {
+      tempComment.splice(commentIndex, 1);
+      setData({ ...data, comments: tempComment });
+    }
+  };
+
   const getCommentIndex = (id) => {
     return data.comments.findIndex((each) => each.id === id);
   };
@@ -213,6 +243,15 @@ const Main = () => {
           addReplyToComment(payload);
         } else if (payload.action === 'update') {
           updateCommentContent(payload);
+        } else if (payload.action === 'delete') {
+          if (payload.modal === 'show') {
+            setModalData({ ...payload });
+          } else if (payload.modal === 'confirm') {
+            deleteComment(payload);
+            setModalData({});
+          } else if (payload.modal === 'cancel') {
+            setModalData({});
+          }
         }
         break;
       default:
@@ -237,6 +276,14 @@ const Main = () => {
         currentUser={currentUser}
         onHandleCommentAction={onHandleCommentAction}
       />
+      {Object.keys(modalData).length ? (
+        <DeleteModal
+          modalData={modalData}
+          onHandleCommentAction={onHandleCommentAction}
+        />
+      ) : (
+        ''
+      )}
     </main>
   );
 };
@@ -409,6 +456,7 @@ const Comment = ({
                         id,
                         isComment,
                         commentId,
+                        modal: 'show',
                         type: 'comment',
                         action: 'delete',
                       })
@@ -521,6 +569,41 @@ const AddComment = ({
           }
         }}
       />
+    </div>
+  );
+};
+
+/* DELETE MODAL */
+const DeleteModal = ({ onHandleCommentAction, modalData }) => {
+  return (
+    <div className="modal">
+      <div className="modal__header">
+        <h2 className="title title--heading">Delete comment</h2>
+      </div>
+      <div className="modal__body">
+        <p>
+          Are you sure you want to delete this comment? This will remove the
+          comment and can't be undone.
+        </p>
+      </div>
+      <div className="modal__footer">
+        <input
+          type="button"
+          value="no, cancel"
+          className="button button--secondary"
+          onClick={() =>
+            onHandleCommentAction({ ...modalData, modal: 'cancel' })
+          }
+        />
+        <input
+          type="button"
+          value="yes, delete"
+          className="button button--danger"
+          onClick={() =>
+            onHandleCommentAction({ ...modalData, modal: 'confirm' })
+          }
+        />
+      </div>
     </div>
   );
 };
