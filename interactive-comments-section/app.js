@@ -74,7 +74,6 @@ const datas = {
 let storedData = JSON.parse(localStorage.getItem('INTERACTIVE_COMMENT_DATA'))
   ? JSON.parse(localStorage.getItem('INTERACTIVE_COMMENT_DATA'))
   : null;
-
 if (storedData && storedData?.comments) {
   storedData.comments.sort((a, b) => b.score - a.score);
 } else {
