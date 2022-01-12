@@ -14,6 +14,8 @@ $color-light-gray: hsl(223, 19%, 93%);
 $color-grayish-blue: hsl(211, 10%, 45%);
 $color-very-light-gray: hsl(228, 33%, 97%);
 
+$bp-medium: 767px;
+
 *,
 *::before,
 *::after {
@@ -64,6 +66,10 @@ body {
   margin-inline: auto;
   padding-block: 3.2rem;
   padding-inline: 2rem;
+
+  @media (max-width: $bp-medium) {
+    padding-inline: 1.2rem;
+  }
 
   max-width: 77rem;
 }
@@ -207,6 +213,13 @@ body {
   max-width: 4rem;
   border-radius: 1.2rem;
   background-color: $color-very-light-gray;
+
+  @media (max-width: $bp-medium) {
+    max-width: 11rem;
+    flex-direction: row;
+    padding: 0.6rem 1.4rem;
+  }
+
   &__plus,
   &__minus {
     cursor: pointer;
@@ -223,6 +236,10 @@ body {
     font-weight: 700;
     color: $color-blue;
     margin-block: 1.8rem;
+    @media (max-width: $bp-medium) {
+      margin-block: 0;
+      margin-inline: 1.8rem;
+    }
   }
 }
 
@@ -238,17 +255,34 @@ body {
 
   animation: slide-up 0.4s linear;
 
+  @media (max-width: $bp-medium) {
+    padding: 1.8rem;
+    flex-direction: column;
+  }
+
   &--reply {
     animation: slide-down-right 0.5s linear;
+    @media (max-width: $bp-medium) {
+      animation: slide-down-little-right 0.5s linear;
+    }
   }
 
   &__main {
     flex: 1;
     margin-left: 2.4rem;
+    @media (max-width: $bp-medium) {
+      width: 100%;
+      margin-left: 0;
+      margin-bottom: 1rem;
+      position: relative;
+    }
   }
 
   &__score {
     @extend .score;
+    @media (max-width: $bp-medium) {
+      order: 2;
+    }
   }
   &__header {
     display: flex;
@@ -286,11 +320,21 @@ body {
         margin-right: 2.4rem;
       }
     }
+
+    @media (max-width: $bp-medium) {
+      right: 0;
+      bottom: -4.2rem;
+      position: absolute;
+    }
   }
   &__replies-list {
     margin-left: 4rem;
     padding-left: 4.2rem;
     border-left: 1px solid $color-light-grayish-blue;
+    @media (max-width: $bp-medium) {
+      margin-left: 0rem;
+      padding-left: 1.2rem;
+    }
   }
   &__replying-to {
     font-weight: 700;
@@ -307,6 +351,9 @@ body {
   padding: 2.4rem;
   border-radius: 0.9rem;
   background-color: $color-white;
+  @media (max-width: $bp-medium) {
+    padding: 1.8rem;
+  }
 
   &--edit {
     padding: 0;
@@ -325,6 +372,12 @@ body {
   &__textarea {
     flex-grow: 1;
     margin-inline: 2rem;
+    @media (max-width: $bp-medium) {
+      order: -1;
+      flex-basis: 100%;
+      margin-inline: 0;
+      margin-bottom: 1.2rem;
+    }
   }
 
   animation: slide-down 0.1s linear;
@@ -363,6 +416,22 @@ body {
   50% {
     opacity: 0.3;
     transform: translate(-5rem, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes slide-down-little-right {
+  0% {
+    opacity: 0;
+    transform: translate(-1rem, -2rem);
+  }
+
+  50% {
+    opacity: 0.3;
+    transform: translate(-1rem, 0);
   }
   100% {
     opacity: 1;

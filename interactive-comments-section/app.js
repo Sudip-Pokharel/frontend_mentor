@@ -71,11 +71,19 @@ const datas = {
   ],
 };
 
+let storedData = JSON.parse(localStorage.getItem('INTERACTIVE_COMMENT_DATA'))
+  ? JSON.parse(localStorage.getItem('INTERACTIVE_COMMENT_DATA'))
+  : null;
+
+if (storedData && storedData?.comments) {
+  storedData.comments.sort((a, b) => b.score - a.score);
+} else {
+  storedData = null;
+}
+
 /* MAIN */
 const Main = () => {
-  const [data, setData] = React.useState(
-    JSON.parse(localStorage.getItem('INTERACTIVE_COMMENT_DATA')) || datas
-  );
+  const [data, setData] = React.useState(storedData || datas);
   const [modalData, setModalData] = React.useState({});
 
   React.useEffect(() => {
@@ -101,6 +109,10 @@ const Main = () => {
   ];
   const currentUser = data.currentUser;
 
+  const updateLocalStorage = (payload) => {
+    localStorage.setItem('INTERACTIVE_COMMENT_DATA', JSON.stringify(payload));
+  };
+
   const addNewComment = (payload) => {
     if (!payload.commentContent) return;
     const tempData = { ...data, comments: [...data.comments] };
@@ -115,6 +127,7 @@ const Main = () => {
     };
     tempData.comments.push(newComment);
     setData(tempData);
+    updateLocalStorage(tempData);
   };
 
   const addReplyToComment = (payload) => {
@@ -145,6 +158,7 @@ const Main = () => {
     targetComment.replies = tempTargetCommentReplies;
     tempComment[commentIndex] = targetComment;
     setData({ ...data, comments: tempComment });
+    updateLocalStorage({ ...data, comments: tempComment });
   };
 
   const updateCommentScore = (payload) => {
@@ -158,7 +172,6 @@ const Main = () => {
         payload.action === 'plus'
           ? targetComment.score + 1
           : targetComment.score - 1;
-      setData({ ...data, comments: [...tempComments] });
     } else {
       const targetReplyIndex = getReplyIndex(targetCommentIndex, payload.id);
       const targetReply = {
@@ -169,8 +182,9 @@ const Main = () => {
           ? targetReply.score + 1
           : targetReply.score - 1;
       tempComments[targetCommentIndex].replies[targetReplyIndex] = targetReply;
-      setData({ ...data, comments: [...tempComments] });
     }
+    setData({ ...data, comments: [...tempComments] });
+    updateLocalStorage({ ...data, comments: [...tempComments] });
   };
 
   const updateCommentContent = (payload) => {
@@ -191,12 +205,12 @@ const Main = () => {
       tempTargetCommentReplies[replyIndex] = targetReply;
       targetComment.replies = tempTargetCommentReplies;
       tempComment[commentIndex] = targetComment;
-      setData({ ...data, comments: tempComment });
     } else {
       targetComment.content = payload.commentContent;
       tempComment[commentIndex] = targetComment;
-      setData({ ...data, comments: tempComment });
     }
+    setData({ ...data, comments: tempComment });
+    updateLocalStorage({ ...data, comments: tempComment });
   };
 
   const deleteComment = (payload) => {
@@ -213,11 +227,11 @@ const Main = () => {
       tempTargetCommentReplies.splice(replyIndex, 1);
       targetComment.replies = tempTargetCommentReplies;
       tempComment[commentIndex] = targetComment;
-      setData({ ...data, comments: tempComment });
     } else {
       tempComment.splice(commentIndex, 1);
-      setData({ ...data, comments: tempComment });
     }
+    setData({ ...data, comments: tempComment });
+    updateLocalStorage({ ...data, comments: tempComment });
   };
 
   const getCommentIndex = (id) => {
@@ -231,7 +245,6 @@ const Main = () => {
   };
 
   const onHandleCommentAction = (payload) => {
-    console.log(payload);
     switch (payload.type) {
       case 'score':
         updateCommentScore(payload);
